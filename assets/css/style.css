@@ -15,22 +15,6 @@
         color: #fffbed;
     }
 
-    #title {
-        display: flex;
-        flex-direction: row;
-        flex-wrap: nowrap;
-        justify-content: center;
-        font-size: 1.25rem;
-    }
-
-    #start {
-        display: flex;
-        flex-direction: row;
-        flex-basis: 500px;
-        justify-content: center;
-        align-items: center;
-    }
-
     button {
         border-radius: 20px;
         border: none;
@@ -47,6 +31,72 @@
         color: #d35158;
     }
 
+    #title {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: center;
+        font-size: 1.25rem;
+    }
+
+    #start {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #playingSurface {
+        display: flex;
+        flex-wrap: nowrap;
+        flex-direction: row;
+        justify-content: center;
+        padding: 3rem;
+    }
+
+    #deck {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        width: 25%;
+        height: 300px;
+        align-self: baseline;
+    }
+    
+    #inPlay {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-self: center;
+        flex-basis: 40%;
+        height: 300px;
+        width: 200px;
+    }
+
+    #playButtons {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 25%;
+    }
+
+    #high {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-self: center;
+        width: 100%;
+        margin-bottom: 4rem;
+    }
+
+    #low {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-self: center;
+        width: 100%;
+    }
     /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ MEDIA QUERIES ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
         /* -- MEDIUM DEVICES (tablets and up -- ≥768px) */

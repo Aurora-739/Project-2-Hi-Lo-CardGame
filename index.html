@@ -13,8 +13,39 @@
     </div>
 
     <div id="start">
-        <button>Start Game!</button>
+        <button onclick="this.style.display='none'">Start Game!</button>
+        
     </div>
+    <br>
+    <div id="playingSurface">
+        <div id="deck">
+            <img src="assets/images/TheDeck.webp" alt="set of aces, acating as the deck">
+        </div>
+        <div id="inPlay">
+            <img src="assets/images/King-d.JPG" alt="king od diamonds">
+        </div>
+
+        <!-- playing buttons (hi / lo)-->
+        <div id="playButtons">
+            <div id="high">
+                <button>
+                    <i class="fa-solid fa-arrow-up"></i>
+                    <br>
+                    Hi
+                </button>
+            </div>
+            <br>
+            <div id="low">
+                <button>
+                    Lo
+                    <br>
+                    <i class="fa-solid fa-arrow-down"></i></button>
+            </div>
+        </div>
+    </div>
+
+    
+
     <script src="assets/js/script.js"></script>
     <script src="https://kit.fontawesome.com/cb3ec56b84.js" crossorigin="anonymous"></script>
 </body>

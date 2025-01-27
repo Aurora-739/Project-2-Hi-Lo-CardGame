@@ -1,1 +1,4 @@
-console.log("Hello there")
+document.addEventListener("DOMContentLoaded", function() {
+    
+
+});
