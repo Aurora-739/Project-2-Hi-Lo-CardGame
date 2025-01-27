@@ -1,9 +1,16 @@
 document.addEventListener("DOMContentLoaded", function() {
     const startButton = document.getElementById('start');
-    //Add on click listener for button
-    startButton.addEventListener('click', function() {
-        //Select (h1) heading by id, and then change it's value to (bananas)
-        document.getElementById('rulescountBox').innerText = document.getElementById('rules')
-    })
+    const howToPlay = document.getElementById('rules');
+
+    startButton.addEventListener("click", event => {
+        if(howToPlay.style.visibility === "hidden"){
+            howToPlay.style.visibility = "visible";
+        }
+        else{
+            howToPlay.style.visibility = "hidden";
+        }
+    });
+        
+
 
 });
