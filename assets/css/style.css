@@ -107,14 +107,30 @@
     #rulescountBox{
         display: flex;
         flex-direction: row;
-        justify-content: start;
         align-self: center;
     }
 
     #rules {
+        display: flex;
         border-radius: 20px;
         border: none;
-        padding-right: 1rem;
+        width: 30%;
+        color: #014525;
+        background-color: #fffbed;
+        flex-basis: 75%;
+        margin-left: 5rem;
+    }
+
+    #winLose {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        flex-basis: 25%;
+        border-radius: 20px;
+        margin-left: 5rem;
+        margin-right: 5rem;
+        padding: 2rem;
+        border: none;
         width: 30%;
         color: #014525;
         background-color: #fffbed;
