@@ -8,11 +8,16 @@
     body {
         background-color: #014525;
         font-family: "Oregano", sans-serif;
+        color: #d35158;
     }
     
     h1 {
         font-family: "Rye", sans-serif;
         color: #fffbed;
+    }
+    h3 {
+        font-family: "Oregano", sans-serif;
+        font-size: 2rem;
     }
 
     button {
@@ -46,12 +51,13 @@
         align-items: center;
     }
 
+/*THE PLAYING SURFACE ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
     #playingSurface {
         display: flex;
         flex-wrap: nowrap;
         flex-direction: row;
         justify-content: center;
-        padding: 3rem;
+        padding-bottom: 3rem;
     }
 
     #deck {
@@ -97,6 +103,23 @@
         align-self: center;
         width: 100%;
     }
+
+    #rulescountBox{
+        display: flex;
+        flex-direction: row;
+        justify-content: start;
+        align-self: center;
+    }
+
+    #rules {
+        border-radius: 20px;
+        border: none;
+        padding-right: 1rem;
+        width: 30%;
+        color: #014525;
+        background-color: #fffbed;
+    }
+
     /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ MEDIA QUERIES ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
         /* -- MEDIUM DEVICES (tablets and up -- ≥768px) */
