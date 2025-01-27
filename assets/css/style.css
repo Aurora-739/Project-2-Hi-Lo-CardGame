@@ -1,0 +1,58 @@
+/* Colour Scheme
+    red: #e30713
+    red-text: #d35158
+    black: #08090a
+    green: #014525 
+    cream: #fffbed*/
+
+    body {
+        background-color: #014525;
+        font-family: "Oregano", sans-serif;
+    }
+    
+    h1 {
+        font-family: "Rye", sans-serif;
+        color: #fffbed;
+    }
+
+    #title {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: center;
+        font-size: 1.25rem;
+    }
+
+    #start {
+        display: flex;
+        flex-direction: row;
+        flex-basis: 500px;
+        justify-content: center;
+        align-items: center;
+    }
+
+    button {
+        border-radius: 20px;
+        border: none;
+        padding: 1rem;
+        width: 30%;
+        font-size: 2rem;
+        font-weight: bold;
+        font-family: "Oregano", sans-serif;
+        color: #014525;
+        background-color: #fffbed;
+    }
+
+    button:hover {
+        color: #d35158;
+    }
+
+    /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ MEDIA QUERIES ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+        /* -- MEDIUM DEVICES (tablets and up -- ≥768px) */
+        @media screen and (min-width: 768px){
+            /* MAKE TITLE BIGGER*/
+            #title {
+                font-size: 2rem;
+            }
+        }
