@@ -62,11 +62,19 @@
 
     #deck {
         display: flex;
-        flex-direction: row;
-        justify-content: center;
+        flex-direction: column;
+        justify-content: start;
         width: 25%;
         height: 300px;
-        align-self: baseline;
+        padding-bottom: 8rem;
+    }
+
+    #deckButton {
+        background-image: url(/assets/images/TheDeck.webp);
+        background-color: transparent;
+        height: 100%;
+        width: 100%;
+        padding: 50%;
     }
     
     #inPlay {
@@ -123,6 +131,7 @@
 
     #winLose {
         display: flex;
+        flex-wrap: nowrap;
         flex-direction: column;
         align-items: center;
         flex-basis: 25%;
