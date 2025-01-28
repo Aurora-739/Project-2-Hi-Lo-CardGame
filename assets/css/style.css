@@ -46,9 +46,15 @@
 
     #start {
         display: flex;
-        flex-direction: row;
+        flex-direction: column;
         justify-content: center;
         align-items: center;
+    }
+
+    #myAces {
+        display: flex;
+        flex-direction: row;
+        padding: 2rem;
     }
 
 /*THE PLAYING SURFACE ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/

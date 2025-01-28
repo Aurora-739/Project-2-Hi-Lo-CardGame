@@ -1,13 +1,18 @@
 document.addEventListener("DOMContentLoaded", function () {
     const startButton = document.getElementById('start');
     const howToPlay = document.getElementById('rulescountBox');
+    const playSurf = document.getElementById('playingSurface');
+    
 
     /*MAKE THE RULES BOX AND SCORE VOUNTER VISIBLE WHEN THE START BUTTON IS CLICKED*/
     startButton.addEventListener("click", event => {
         if (howToPlay.style.visibility === "hidden") {
             howToPlay.style.visibility = "visible";
+            playSurf.style.visibility = "visible";
         } else {
             howToPlay.style.visibility = "hidden";
+            playSurf.style.visibility = "hidden";
+
         }
     });
 
@@ -26,7 +31,9 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     
-    
+    /* An array for used images, make sure it's checked before continueing onto the showing images section. */
+
+    /* Make the deck button only usable after the start button appears */
 
 
 });

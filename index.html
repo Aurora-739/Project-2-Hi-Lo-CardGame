@@ -12,12 +12,20 @@
         <h1>Hi-Lo ~ Card Game</h1>
     </div>
 
-    <div id="start">
-        <button onclick="this.style.display='none'">Start Game!</button>
+    <div id="start" onclick="this.style.display='none'">
+        <button>Start Game!</button>
+        <div id="myAces">
+            <img src="assets/images/Ace-cl.JPG" alt="Ace of Clubs" height="200px">
+            <img src="assets/images/Ace-d.JPG" alt="Ace of Diamonds" height="200px">
+            <img src="assets/images/Ace-h.JPG" alt="Ace of Hearts" height="200px">
+            <img src="assets/images/Ace-Spades.JPG" alt="Ace of Spades" height="200px">
+        </div>
+        
+        
         
     </div>
     <br>
-    <div id="playingSurface">
+    <div id="playingSurface" style="visibility: hidden">
         <div id="deck">
             <button id="deckButton"></button>
         </div>
