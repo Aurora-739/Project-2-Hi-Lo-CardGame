@@ -12,7 +12,6 @@ document.addEventListener("DOMContentLoaded", function () {
         } else {
             howToPlay.style.visibility = "hidden";
             playSurf.style.visibility = "hidden";
-
         }
     });
 
@@ -29,8 +28,10 @@ document.addEventListener("DOMContentLoaded", function () {
             div.appendChild(img);
         }
     });
+    let randomNum = Math.floor(Math.random()*13);
+    console.log(randomNum)
 
-    
+    /* when hi / lo clicked, replace current cener image with new image */
     /* An array for used images, make sure it's checked before continueing onto the showing images section. */
 
     /* Make the deck button only usable after the start button appears */
