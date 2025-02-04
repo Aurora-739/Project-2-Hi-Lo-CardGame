@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
     /*MAKE THE DECK DEAL A NEW CARD WHEN DECK IS CLICKED*/
-    
+    /** The Dealing function */
     function dealing() {
         let randomNum = Math.floor(Math.random() * 14);
         while (randomNum === 0) {
@@ -657,7 +657,6 @@ document.addEventListener("DOMContentLoaded", function () {
             });
         }
     }
-
     /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~Hi / Lo Buttons ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
     const hiLoButtons = document.getElementsByClassName('hilowButtons');
     const hiButton = document.getElementById('hiButton');
