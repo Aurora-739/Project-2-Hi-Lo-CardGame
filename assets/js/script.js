@@ -11,9 +11,11 @@ document.addEventListener("DOMContentLoaded", function () {
         if (howToPlay.style.visibility === "hidden") {
             howToPlay.style.visibility = "visible";
             playSurf.style.visibility = "visible";
+            dealing()
         } else {
             howToPlay.style.visibility = "hidden";
             playSurf.style.visibility = "hidden";
+            
         }
     });
 
@@ -27,9 +29,6 @@ document.addEventListener("DOMContentLoaded", function () {
     
         let randomNum = 1;
         console.log(randomNum);
-        deck.addEventListener("click", event => {
-            dealing()
-        });
 
     
     function dealing() {
@@ -97,4 +96,10 @@ document.addEventListener("DOMContentLoaded", function () {
             document.getElementById("deckButton").disabled = false;
             dealing();
     });
+    loButton.addEventListener("click", event => {
+        let randomNum = 1; /*Math.floor(Math.random()*2);*/
+        console.log(randomNum);
+        document.getElementById("deckButton").disabled = false;
+        dealing();
+});
 });
