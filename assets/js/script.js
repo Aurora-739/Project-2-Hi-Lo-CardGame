@@ -22,15 +22,14 @@ document.addEventListener("DOMContentLoaded", function () {
 
         }
     });
-
-    
     /*MAKE THE DECK DEAL A NEW CARD WHEN DECK IS CLICKED*/
-
+    
     function dealing() {
         let randomNum = Math.floor(Math.random() * 14);
         while (randomNum === 0) {
         randomNum = Math.floor(Math.random() * 14);
         }
+        console.log(randomNum)
         if (randomNum === 1) {
             Aces()
         } else if (randomNum === 2) {
@@ -664,18 +663,12 @@ document.addEventListener("DOMContentLoaded", function () {
     const hiButton = document.getElementById('hiButton');
     const loButton = document.getElementById('loButton');
     hiButton.addEventListener("click", event => {
-        let randomNum = 1; /*Math.floor(Math.random()*2);*/
-        console.log(randomNum);
         document.getElementById("deckButton").disabled = false;
         document.getElementById("loButton").disabled = true;
         document.getElementById("hiButton").disabled = true;
         dealing();
     });
     loButton.addEventListener("click", event => {
-        let randomNum = Math.floor(Math.random() * 14);
-        while (randomNum === 0) {
-            randomNum = Math.floor(Math.random() * 14);
-        }
         document.getElementById("deckButton").disabled = false;
         document.getElementById("loButton").disabled = true;
         document.getElementById("hiButton").disabled = true;
