@@ -9,6 +9,7 @@ body {
     background-color: #014525;
     font-family: "Oregano", sans-serif;
     color: #d35158;
+    width: 100vw;
 }
 
 h1 {
@@ -70,7 +71,7 @@ button:hover {
     flex-wrap: nowrap;
     flex-direction: row;
     justify-content: center;
-    padding-bottom: 3rem;
+    padding-bottom: 4rem;
 }
 
 #deck {
@@ -79,15 +80,17 @@ button:hover {
     justify-content: start;
     width: 25%;
     height: 300px;
-    padding-bottom: 8rem;
 }
 
 #deckButton {
     background-image: url("https://static.vecteezy.com/system/resources/thumbnails/008/854/548/small_2x/poker-card-casino-3d-design-elements-free-png.png");
     background-color: transparent;
-    height: 100%;
+    height: 35%;
     width: 100%;
-    padding: 50%;
+    padding: 59%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
 #inPlay {
@@ -100,21 +103,35 @@ button:hover {
     width: 200px;
 }
 
+#blankDeck {
+    width: 100%;
+    height: 100%;
+}
+
 #playButtons {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 60%;
+    height: 200px;
+}
+
+#hiButton {
+    padding-inline: 3rem;
+    margin-top: 6rem;
+}
+
+#loButton {
+    padding-inline: 3rem;
+
 }
 
 #high {
+    margin-top: 4rem;
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-self: center;
-    width: 100%;
-    margin-bottom: 4rem;
 }
 
 #low {
@@ -122,24 +139,23 @@ button:hover {
     flex-direction: row;
     justify-content: center;
     align-self: center;
-    width: 100%;
 }
 
 #rulescountBox {
     display: flex;
-    flex-direction: row;
+    flex-direction: column-reverse;
     align-self: center;
+    justify-items: center;
 }
 
 #rules {
     display: flex;
     border-radius: 20px;
     border: none;
-    width: 30%;
     color: #014525;
     background-color: #fffbed;
     flex-basis: 75%;
-    margin-left: 5rem;
+    margin: 1rem;
 }
 
 #winLose {
@@ -149,10 +165,8 @@ button:hover {
     align-items: center;
     flex-basis: 25%;
     border-radius: 20px;
-    margin-left: 5rem;
-    margin-right: 5rem;
+    margin: 1rem;
     border: none;
-    width: 30%;
     color: #014525;
     background-color: #fffbed;
 }
@@ -202,16 +216,16 @@ button:hover {
         flex-wrap: nowrap;
         flex-direction: row;
         justify-content: center;
-        padding-bottom: 3rem;
+        padding-bottom: 8rem;
     }
+
+    
 
     #deck {
         display: flex;
         flex-direction: column;
         justify-content: start;
-        width: 25%;
-        height: 300px;
-        padding-bottom: 8rem;
+        width: 100%;
     }
 
     #deckButton {
