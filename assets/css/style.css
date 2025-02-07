@@ -179,125 +179,63 @@ button:hover {
     /* MAKE TITLE BIGGER*/
     #title {
         font-size: 2rem;
-    }
+    }   
 
-    button {
-        border-radius: 20px;
-        border: none;
-        padding: 1rem;
-        width: 30%;
-        font-size: 2rem;
-    }
-
-    #title {
-        display: flex;
-        flex-direction: row;
-        flex-wrap: nowrap;
-        justify-content: center;
-        font-size: 1.25rem;
-    }
-
-    #start {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-    }
-
-    #myAces {
-        display: flex;
-        flex-direction: row;
-        padding: 2rem;
-    }
 
     /*THE PLAYING SURFACE ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
     #playingSurface {
-        display: flex;
-        flex-wrap: nowrap;
-        flex-direction: row;
-        justify-content: center;
-        padding-bottom: 8rem;
+        margin: 2rem;
     }
 
-    
-
     #deck {
-        display: flex;
-        flex-direction: column;
-        justify-content: start;
-        width: 100%;
+        justify-content: center;
+        width: 50%; 
+        }
+
+    #blankDeck {
+        margin-right: 2rem;
+        width: fit-content;
     }
 
     #deckButton {
-        background-image: url("https://static.vecteezy.com/system/resources/thumbnails/008/854/548/small_2x/poker-card-casino-3d-design-elements-free-png.png");
-        background-color: transparent;
-        height: 100%;
-        width: 100%;
-        padding: 50%;
-    }
-
-    #inPlay {
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        align-self: center;
-        flex-basis: 40%;
-        height: 300px;
-        width: 200px;
+        padding: 37%;
     }
 
     #playButtons {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
         width: 25%;
     }
 
     #high {
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        align-self: center;
-        width: 100%;
+        margin-top: 0rem;
         margin-bottom: 4rem;
     }
 
-    #low {
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        align-self: center;
-        width: 100%;
-    }
-
     #rulescountBox {
-        display: flex;
         flex-direction: row;
-        align-self: center;
-    }
-
-    #rules {
-        display: flex;
-        border-radius: 20px;
-        border: none;
-        width: 30%;
-        flex-basis: 75%;
-        margin-left: 5rem;
-    }
+        }
 
     #winLose {
-        display: flex;
-        flex-wrap: nowrap;
-        flex-direction: column;
-        align-items: center;
-        flex-basis: 25%;
-        border-radius: 20px;
-        margin-left: 5rem;
-        margin-right: 5rem;
-        border: none;
-        width: 30%;
-        color: #014525;
-        background-color: #fffbed;
+        padding: 2rem;
+        margin-right: 2rem;
+    }
+    #rules {
+        margin-left: 2rem;
+    }
+}
+
+/* -- LARGE DEVICES (tablets and up -- ≥1920px) */
+@media screen and (min-width: 1920px) {
+    #deckButton {
+        width: 71%; 
+        }
+
+    #blankDeck {
+        width: fit-content;
+        height: 25rem;
+    }
+
+    #playingSurface {
+        margin-top: 0rem;
+
     }
 }
