@@ -5,18 +5,165 @@
     green: #014525 
     cream: #fffbed*/
 
-    body {
-        background-color: #014525;
-        font-family: "Oregano", sans-serif;
-        color: #d35158;
-    }
-    
-    h1 {
-        font-family: "Rye", sans-serif;
-        color: #fffbed;
-    }
-    h3 {
-        font-family: "Oregano", sans-serif;
+body {
+    background-color: #014525;
+    font-family: "Oregano", sans-serif;
+    color: #d35158;
+}
+
+h1 {
+    font-family: "Rye", sans-serif;
+    color: #fffbed;
+}
+
+h3 {
+    font-family: "Oregano", sans-serif;
+    font-size: 2rem;
+}
+
+button {
+    border-radius: 20px;
+    border: none;
+    padding: 1rem;
+    width: 30%;
+    font-size: 2rem;
+    font-weight: bold;
+    font-family: "Oregano", sans-serif;
+    color: #014525;
+    background-color: #fffbed;
+}
+
+button:hover {
+    color: #d35158;
+}
+
+#startButton {
+    width: 60%;
+}
+
+#title {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    font-size: 1.25rem;
+}
+
+#start {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#myAces {
+    display: flex;
+    flex-direction: row;
+    padding: 2rem;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+/*THE PLAYING SURFACE ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+#playingSurface {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    justify-content: center;
+    padding-bottom: 3rem;
+}
+
+#deck {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    width: 25%;
+    height: 300px;
+    padding-bottom: 8rem;
+}
+
+#deckButton {
+    background-image: url("https://static.vecteezy.com/system/resources/thumbnails/008/854/548/small_2x/poker-card-casino-3d-design-elements-free-png.png");
+    background-color: transparent;
+    height: 100%;
+    width: 100%;
+    padding: 50%;
+}
+
+#inPlay {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-self: center;
+    flex-basis: 40%;
+    height: 300px;
+    width: 200px;
+}
+
+#playButtons {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 60%;
+}
+
+#high {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-self: center;
+    width: 100%;
+    margin-bottom: 4rem;
+}
+
+#low {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-self: center;
+    width: 100%;
+}
+
+#rulescountBox {
+    display: flex;
+    flex-direction: row;
+    align-self: center;
+}
+
+#rules {
+    display: flex;
+    border-radius: 20px;
+    border: none;
+    width: 30%;
+    color: #014525;
+    background-color: #fffbed;
+    flex-basis: 75%;
+    margin-left: 5rem;
+}
+
+#winLose {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    align-items: center;
+    flex-basis: 25%;
+    border-radius: 20px;
+    margin-left: 5rem;
+    margin-right: 5rem;
+    border: none;
+    width: 30%;
+    color: #014525;
+    background-color: #fffbed;
+}
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ MEDIA QUERIES ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+/* -- MEDIUM DEVICES (tablets and up -- ≥768px) */
+@media screen and (min-width: 768px) {
+
+    /* MAKE TITLE BIGGER*/
+    #title {
         font-size: 2rem;
     }
 
@@ -26,14 +173,6 @@
         padding: 1rem;
         width: 30%;
         font-size: 2rem;
-        font-weight: bold;
-        font-family: "Oregano", sans-serif;
-        color: #014525;
-        background-color: #fffbed;
-    }
-
-    button:hover {
-        color: #d35158;
     }
 
     #title {
@@ -57,7 +196,7 @@
         padding: 2rem;
     }
 
-/*THE PLAYING SURFACE ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+    /*THE PLAYING SURFACE ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
     #playingSurface {
         display: flex;
         flex-wrap: nowrap;
@@ -76,13 +215,13 @@
     }
 
     #deckButton {
-        background-image: url("/assets/images/theDeck.png");
+        background-image: url("https://static.vecteezy.com/system/resources/thumbnails/008/854/548/small_2x/poker-card-casino-3d-design-elements-free-png.png");
         background-color: transparent;
         height: 100%;
         width: 100%;
         padding: 50%;
     }
-    
+
     #inPlay {
         display: flex;
         flex-direction: row;
@@ -118,7 +257,7 @@
         width: 100%;
     }
 
-    #rulescountBox{
+    #rulescountBox {
         display: flex;
         flex-direction: row;
         align-self: center;
@@ -129,8 +268,6 @@
         border-radius: 20px;
         border: none;
         width: 30%;
-        color: #014525;
-        background-color: #fffbed;
         flex-basis: 75%;
         margin-left: 5rem;
     }
@@ -149,13 +286,4 @@
         color: #014525;
         background-color: #fffbed;
     }
-
-    /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ MEDIA QUERIES ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
-
-        /* -- MEDIUM DEVICES (tablets and up -- ≥768px) */
-        @media screen and (min-width: 768px){
-            /* MAKE TITLE BIGGER*/
-            #title {
-                font-size: 2rem;
-            }
-        }
+}

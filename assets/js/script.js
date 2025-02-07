@@ -1174,7 +1174,7 @@ document.addEventListener("DOMContentLoaded", function () {
         document.getElementById("correct").innerText = ++correctScore;
         hi = false;
         lo = false;
-        if (correctScore === 4) {
+        if (correctScore === 13) {
             document.getElementById("correct").innerText = "0";
             winning()
         }
