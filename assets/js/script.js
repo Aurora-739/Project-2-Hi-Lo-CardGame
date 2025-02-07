@@ -1184,6 +1184,8 @@ document.addEventListener("DOMContentLoaded", function () {
         alert("Oh dear, that's one wrong :(")
         let lossScore = parseInt(document.getElementById("losses").innerText);
         document.getElementById("losses").innerText = ++lossScore;
+        let correctScore = parseInt(document.getElementById("correct").innerText);
+        document.getElementById("correct").innerText = --correctScore;
         hi = false;
         lo = false;
     }
@@ -1193,6 +1195,8 @@ document.addEventListener("DOMContentLoaded", function () {
         let winScore = parseInt(document.getElementById("wins").innerText);
         document.getElementById("wins").innerText = ++winScore;
         alert("Well Done! You've won!");
+        prevCard = [""];
+        console.log(prevCard);
         hi = false;
         lo = false;
     }
