@@ -15,6 +15,7 @@ document.addEventListener("DOMContentLoaded", function () {
             playSurf.style.visibility = "visible";
             document.getElementById("loButton").disabled = true;
             document.getElementById("hiButton").disabled = true;
+
             dealing()
         } else {
             howToPlay.style.visibility = "hidden";
@@ -23,7 +24,9 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
     /**Previous card array */
-    
+    let hi = false;
+    let lo = false;
+    let prevCardNum = "";
     /** The Dealing function */
     function dealing() {
         let randomNum = Math.floor(Math.random() * 14);
@@ -33,18 +36,22 @@ document.addEventListener("DOMContentLoaded", function () {
         console.log(randomNum)
         prevCard = [];
         console.log(prevCard);
-        prevCardNum = [];
-       if (prevCard.length === 13) {
-            alert("Well done! You're a quarter of the way to win!");
-        } else if (prevCard.length === 26) {
-            alert("Well done! You're half of the way to win!");
-        } else if (prevCard.length === 39) {
-            alert("Well done! You're three quarters of the way to win!");
-        } else if (prevCard.length === 52) {
-            alert("Well done! You've won!!");
-        }
+        console.log(prevCardNum);
+        if (hi === true) {
+            if (randomNum >= prevCardNum) {
+                correct()
+            } else {
+                incorrect()
+            }
+        } else if (lo === true) {
+            if (randomNum <= prevCardNum) {
+                correct()
+            } else {
+                incorrect()
+            }
+        } 
+
         if (randomNum === 1) {
-            prevCardNum.push(1)
             Aces()
         } else if (randomNum === 2) {
             Twos()
@@ -81,23 +88,18 @@ document.addEventListener("DOMContentLoaded", function () {
                 if (card.style.visibility = "visible") {
                     if (prevCard.includes("Ace-Clubs") === true) {
                         dealing();
-                    } else if (prevCardNum.length-1 === prevCardNum.length-2){
-                        dealing();
                     } else {
                         prevCard.push("Ace-Clubs");
                         console.log(prevCard);
-                        prevCardNum.push(1);
+                       prevCardNum = 1;
                         console.log(prevCardNum);
-                        
+
                     }
                     var imgRep = document.getElementById('blankDeck');
                     imgRep.src = "assets/images/Ace-cl.JPG";
                     document.getElementById("deckButton").disabled = true;
                     document.getElementById("hiButton").disabled = false;
                     document.getElementById("loButton").disabled = false;
-
-
-
                 }
             });
         } else if (anotherRandomNum === 1) {
@@ -105,12 +107,10 @@ document.addEventListener("DOMContentLoaded", function () {
                 if (card.style.visibility = "visible") {
                     if (prevCard.includes("Ace-Diamond") === true) {
                         dealing();
-                    } else if (prevCardNum.length-1 === prevCardNum.length-2){
-                        dealing();
                     } else {
                         prevCard.push("Ace-Diamond");
                         console.log(prevCard);
-                        prevCardNum.push(1);
+                       prevCardNum = 1;
                         console.log(prevCardNum);
                     }
                     var imgRep = document.getElementById('blankDeck');
@@ -127,12 +127,10 @@ document.addEventListener("DOMContentLoaded", function () {
                 if (card.style.visibility = "visible") {
                     if (prevCard.includes("Ace-Heart") === true) {
                         dealing();
-                    } else if (prevCardNum.length-1 === prevCardNum.length-2){
-                        dealing();
                     } else {
                         prevCard.push("Ace-Heart");
                         console.log(prevCard);
-                        prevCardNum.push(1);
+                       prevCardNum = 1;
                         console.log(prevCardNum);
                     }
                     var imgRep = document.getElementById('blankDeck');
@@ -149,12 +147,10 @@ document.addEventListener("DOMContentLoaded", function () {
                 if (card.style.visibility = "visible") {
                     if (prevCard.push("Ace-Spades") === true) {
                         dealing();
-                    } else if (prevCardNum.length-1 === prevCardNum.length-2){
-                        dealing();
                     } else {
                         prevCard.push("Ace-Spades");
                         console.log(prevCard);
-                        prevCardNum.push(1);
+                       prevCardNum = 1;
                         console.log(prevCardNum);
                     }
                     var imgRep = document.getElementById('blankDeck');
@@ -176,12 +172,10 @@ document.addEventListener("DOMContentLoaded", function () {
                 if (card.style.visibility = "visible") {
                     if (prevCard.includes("2-Clubs") === true) {
                         dealing();
-                    } else if (prevCardNum.length-1 === prevCardNum.length-2){
-                        dealing();
                     } else {
                         prevCard.push("2-Clubs");
                         console.log(prevCard);
-                        prevCardNum.push(2);
+                       prevCardNum = 2;
                         console.log(prevCardNum);
                     }
                     var imgRep = document.getElementById('blankDeck');
@@ -197,12 +191,10 @@ document.addEventListener("DOMContentLoaded", function () {
                 if (card.style.visibility = "visible") {
                     if (prevCard.includes("2-Diamonds") === true) {
                         dealing();
-                    } else if (prevCardNum.length-1 === prevCardNum.length-2){
-                        dealing();
                     } else {
                         prevCard.push("2-Diamonds");
                         console.log(prevCard);
-                        prevCardNum.push(2);
+                       prevCardNum = 2;
                         console.log(prevCardNum);
                     }
                     var imgRep = document.getElementById('blankDeck');
@@ -218,12 +210,10 @@ document.addEventListener("DOMContentLoaded", function () {
                 if (card.style.visibility = "visible") {
                     if (prevCard.includes("2-Hearts") === true) {
                         dealing();
-                    } else if (prevCardNum.length-1 === prevCardNum.length-2){
-                        dealing();
                     } else {
                         prevCard.push("2-Hearts");
                         console.log(prevCard);
-                        prevCardNum.push(2);
+                       prevCardNum = 2;
                         console.log(prevCardNum);
                     }
                     var imgRep = document.getElementById('blankDeck');
@@ -239,12 +229,10 @@ document.addEventListener("DOMContentLoaded", function () {
                 if (card.style.visibility = "visible") {
                     if (prevCard.includes("2-Spades") === true) {
                         dealing();
-                    } else if (prevCardNum.length-1 === prevCardNum.length-2){
-                        dealing();
                     } else {
                         prevCard.push("2-Spades");
                         console.log(prevCard);
-                        prevCardNum.push(2);
+                       prevCardNum = 2;
                         console.log(prevCardNum);
                     }
                     var imgRep = document.getElementById('blankDeck');
@@ -267,12 +255,10 @@ document.addEventListener("DOMContentLoaded", function () {
                 if (card.style.visibility = "visible") {
                     if (prevCard.includes("3-Clubs") === true) {
                         dealing();
-                    } else if (prevCardNum.length-1 === prevCardNum.length-2){
-                        dealing();
                     } else {
                         prevCard.push("3-Clubs");
                         console.log(prevCard);
-                        prevCardNum.push(3);
+                       prevCardNum = 3;
                         console.log(prevCardNum);
                     }
                     var imgRep = document.getElementById('blankDeck');
@@ -288,12 +274,10 @@ document.addEventListener("DOMContentLoaded", function () {
                 if (card.style.visibility = "visible") {
                     if (prevCard.includes("3-Diamonds") === true) {
                         dealing();
-                    } else if (prevCardNum.length-1 === prevCardNum.length-2){
-                        dealing();
                     } else {
                         prevCard.push("3-Diamonds");
                         console.log(prevCard);
-                        prevCardNum.push(3);
+                       prevCardNum = 3;
                         console.log(prevCardNum);
                     }
                     var imgRep = document.getElementById('blankDeck');
@@ -309,12 +293,10 @@ document.addEventListener("DOMContentLoaded", function () {
                 if (card.style.visibility = "visible") {
                     if (prevCard.includes("3-Hearts") === true) {
                         dealing();
-                    } else if (prevCardNum.length-1 === prevCardNum.length-2){
-                        dealing();
                     } else {
                         prevCard.push("3-Hearts");
                         console.log(prevCard);
-                        prevCardNum.push(3);
+                       prevCardNum = 3;
                         console.log(prevCardNum);
                     }
                     var imgRep = document.getElementById('blankDeck');
@@ -330,12 +312,10 @@ document.addEventListener("DOMContentLoaded", function () {
                 if (card.style.visibility = "visible") {
                     if (prevCard.includes("3-Spades") === true) {
                         dealing();
-                    } else if (prevCardNum.length-1 === prevCardNum.length-2){
-                        dealing();
                     } else {
                         prevCard.push("3-Spades");
                         console.log(prevCard);
-                        prevCardNum.push(3);
+                       prevCardNum = 3;
                         console.log(prevCardNum);
                     }
                     var imgRep = document.getElementById('blankDeck');
@@ -357,12 +337,10 @@ document.addEventListener("DOMContentLoaded", function () {
                 if (card.style.visibility = "visible") {
                     if (prevCard.includes("4-Clubs") === true) {
                         dealing();
-                    } else if (prevCardNum.length-1 === prevCardNum.length-2){
-                        dealing();
                     } else {
                         prevCard.push("4-Clubs");
                         console.log(prevCard);
-                        prevCardNum.push(4);
+                       prevCardNum = 4;
                         console.log(prevCardNum);
                     }
                     var imgRep = document.getElementById('blankDeck');
@@ -378,12 +356,10 @@ document.addEventListener("DOMContentLoaded", function () {
                 if (card.style.visibility = "visible") {
                     if (prevCard.includes("4-Diamonds") === true) {
                         dealing();
-                    } else if (prevCardNum.length-1 === prevCardNum.length-2){
-                        dealing();
                     } else {
                         prevCard.push("4-Diamonds");
                         console.log(prevCard);
-                        prevCardNum.push(4);
+                       prevCardNum = 4;
                         console.log(prevCardNum);
                     }
                     var imgRep = document.getElementById('blankDeck');
@@ -399,12 +375,10 @@ document.addEventListener("DOMContentLoaded", function () {
                 if (card.style.visibility = "visible") {
                     if (prevCard.includes("4-Hearts") === true) {
                         dealing();
-                    } else if (prevCardNum.length-1 === prevCardNum.length-2){
-                        dealing();
                     } else {
                         prevCard.push("4-Hearts");
                         console.log(prevCard);
-                        prevCardNum.push(4);
+                       prevCardNum = 4;
                         console.log(prevCardNum);
                     }
                     var imgRep = document.getElementById('blankDeck');
@@ -420,12 +394,10 @@ document.addEventListener("DOMContentLoaded", function () {
                 if (card.style.visibility = "visible") {
                     if (prevCard.includes("4-Spades") === true) {
                         dealing();
-                    } else if (prevCardNum.length-1 === prevCardNum.length-2){
-                        dealing();
                     } else {
                         prevCard.push("4-Spades");
                         console.log(prevCard);
-                        prevCardNum.push(4);
+                       prevCardNum = 4;
                         console.log(prevCardNum);
                     }
                     var imgRep = document.getElementById('blankDeck');
@@ -447,12 +419,10 @@ document.addEventListener("DOMContentLoaded", function () {
                 if (card.style.visibility = "visible") {
                     if (prevCard.includes("5-Clubs") === true) {
                         dealing();
-                    } else if (prevCardNum.length-1 === prevCardNum.length-2){
-                        dealing();
                     } else {
                         prevCard.push("5-Clubs");
                         console.log(prevCard);
-                        prevCardNum.push(5);
+                       prevCardNum = 5;
                         console.log(prevCardNum);
                     }
                     var imgRep = document.getElementById('blankDeck');
@@ -468,12 +438,10 @@ document.addEventListener("DOMContentLoaded", function () {
                 if (card.style.visibility = "visible") {
                     if (prevCard.includes("5-Diamonds") === true) {
                         dealing();
-                    } else if (prevCardNum.length-1 === prevCardNum.length-2){
-                        dealing();
                     } else {
                         prevCard.push("5-Diamonds");
                         console.log(prevCard);
-                        prevCardNum.push(5);
+                       prevCardNum = 5;
                         console.log(prevCardNum);
                     }
                     var imgRep = document.getElementById('blankDeck');
@@ -488,12 +456,10 @@ document.addEventListener("DOMContentLoaded", function () {
                 if (card.style.visibility = "visible") {
                     if (prevCard.includes("5-Hearts") === true) {
                         dealing();
-                    } else if (prevCardNum.length-1 === prevCardNum.length-2){
-                        dealing();
                     } else {
                         prevCard.push("5-Hearts");
                         console.log(prevCard);
-                        prevCardNum.push(5);
+                       prevCardNum = 5;
                         console.log(prevCardNum);
                     }
                     var imgRep = document.getElementById('blankDeck');
@@ -509,12 +475,10 @@ document.addEventListener("DOMContentLoaded", function () {
                 if (card.style.visibility = "visible") {
                     if (prevCard.includes("5-Spades") === true) {
                         dealing();
-                    } else if (prevCardNum.length-1 === prevCardNum.length-2){
-                        dealing();
                     } else {
                         prevCard.push("5-Spades");
                         console.log(prevCard);
-                        prevCardNum.push(5);
+                       prevCardNum = 5;
                         console.log(prevCardNum);
                     }
                     var imgRep = document.getElementById('blankDeck');
@@ -536,12 +500,10 @@ document.addEventListener("DOMContentLoaded", function () {
                 if (card.style.visibility = "visible") {
                     if (prevCard.includes("6-Clubs") === true) {
                         dealing();
-                    } else if (prevCardNum.length-1 === prevCardNum.length-2){
-                        dealing();
                     } else {
                         prevCard.push("6-Clubs");
                         console.log(prevCard);
-                        prevCardNum.push(6);
+                       prevCardNum = 6;
                         console.log(prevCardNum);
                     }
                     var imgRep = document.getElementById('blankDeck');
@@ -557,12 +519,10 @@ document.addEventListener("DOMContentLoaded", function () {
                 if (card.style.visibility = "visible") {
                     if (prevCard.includes("6-Diamonds") === true) {
                         dealing();
-                    } else if (prevCardNum.length-1 === prevCardNum.length-2){
-                        dealing();
                     } else {
                         prevCard.push("6-Diamonds");
                         console.log(prevCard);
-                        prevCardNum.push(6);
+                       prevCardNum = 6;
                         console.log(prevCardNum);
                     }
                     var imgRep = document.getElementById('blankDeck');
@@ -578,12 +538,10 @@ document.addEventListener("DOMContentLoaded", function () {
                 if (card.style.visibility = "visible") {
                     if (prevCard.includes("6-Hearts") === true) {
                         dealing();
-                    } else if (prevCardNum.length-1 === prevCardNum.length-2){
-                        dealing();
                     } else {
                         prevCard.push("6-Hearts");
                         console.log(prevCard);
-                        prevCardNum.push(6);
+                       prevCardNum = 6;
                         console.log(prevCardNum);
                     }
                     var imgRep = document.getElementById('blankDeck');
@@ -599,12 +557,10 @@ document.addEventListener("DOMContentLoaded", function () {
                 if (card.style.visibility = "visible") {
                     if (prevCard.includes("6-Spades") === true) {
                         dealing();
-                    } else if (prevCardNum.length-1 === prevCardNum.length-2){
-                        dealing();
                     } else {
                         prevCard.push("6-Spades");
                         console.log(prevCard);
-                        prevCardNum.push(6);
+                       prevCardNum = 6;
                         console.log(prevCardNum);
                     }
                     var imgRep = document.getElementById('blankDeck');
@@ -626,12 +582,10 @@ document.addEventListener("DOMContentLoaded", function () {
                 if (card.style.visibility = "visible") {
                     if (prevCard.includes("7-Clubs") === true) {
                         dealing();
-                    } else if (prevCardNum.length-1 === prevCardNum.length-2){
-                        dealing();
                     } else {
                         prevCard.push("7-Clubs");
                         console.log(prevCard);
-                        prevCardNum.push(7);
+                       prevCardNum = 7;
                         console.log(prevCardNum);
                     }
                     var imgRep = document.getElementById('blankDeck');
@@ -647,12 +601,10 @@ document.addEventListener("DOMContentLoaded", function () {
                 if (card.style.visibility = "visible") {
                     if (prevCard.includes("7-Diamonds") === true) {
                         dealing();
-                    } else if (prevCardNum.length-1 === prevCardNum.length-2){
-                        dealing();
                     } else {
                         prevCard.push("7-Diamonds");
                         console.log(prevCard);
-                        prevCardNum.push(7);
+                       prevCardNum = 7;
                         console.log(prevCardNum);
                     }
                     var imgRep = document.getElementById('blankDeck');
@@ -668,12 +620,10 @@ document.addEventListener("DOMContentLoaded", function () {
                 if (card.style.visibility = "visible") {
                     if (prevCard.includes("7-Hearts") === true) {
                         dealing();
-                    } else if (prevCardNum.length-1 === prevCardNum.length-2){
-                        dealing();
                     } else {
                         prevCard.push("7-Hearts");
                         console.log(prevCard);
-                        prevCardNum.push(7);
+                       prevCardNum = 7;
                         console.log(prevCardNum);
                     }
                     var imgRep = document.getElementById('blankDeck');
@@ -689,12 +639,10 @@ document.addEventListener("DOMContentLoaded", function () {
                 if (card.style.visibility = "visible") {
                     if (prevCard.includes("7-Spades") === true) {
                         dealing();
-                    } else if (prevCardNum.length-1 === prevCardNum.length-2){
-                        dealing();
                     } else {
                         prevCard.push("7-Spades");
                         console.log(prevCard);
-                        prevCardNum.push(7);
+                       prevCardNum = 7;
                         console.log(prevCardNum);
                     }
                     var imgRep = document.getElementById('blankDeck');
@@ -716,12 +664,10 @@ document.addEventListener("DOMContentLoaded", function () {
                 if (card.style.visibility = "visible") {
                     if (prevCard.includes("8-Clubs") === true) {
                         dealing();
-                    } else if (prevCardNum.length-1 === prevCardNum.length-2){
-                        dealing();
                     } else {
                         prevCard.push("8-Clubs");
                         console.log(prevCard);
-                        prevCardNum.push(8);
+                       prevCardNum = 8;
                         console.log(prevCardNum);
                     }
                     var imgRep = document.getElementById('blankDeck');
@@ -737,12 +683,10 @@ document.addEventListener("DOMContentLoaded", function () {
                 if (card.style.visibility = "visible") {
                     if (prevCard.includes("8-Diamonds") === true) {
                         dealing();
-                    } else if (prevCardNum.length-1 === prevCardNum.length-2){
-                        dealing();
                     } else {
                         prevCard.push("8-Diamonds");
                         console.log(prevCard);
-                        prevCardNum.push(8);
+                       prevCardNum = 8;
                         console.log(prevCardNum);
                     }
                     var imgRep = document.getElementById('blankDeck');
@@ -758,12 +702,10 @@ document.addEventListener("DOMContentLoaded", function () {
                 if (card.style.visibility = "visible") {
                     if (prevCard.includes("8-Hearts") === true) {
                         dealing();
-                    } else if (prevCardNum.length-1 === prevCardNum.length-2){
-                        dealing();
                     } else {
                         prevCard.push("8-Hearts");
                         console.log(prevCard);
-                        prevCardNum.push(8);
+                       prevCardNum = 8;
                         console.log(prevCardNum);
                     }
                     var imgRep = document.getElementById('blankDeck');
@@ -779,12 +721,10 @@ document.addEventListener("DOMContentLoaded", function () {
                 if (card.style.visibility = "visible") {
                     if (prevCard.includes("8-Spades") === true) {
                         dealing();
-                    } else if (prevCardNum.length-1 === prevCardNum.length-2){
-                        dealing();
                     } else {
                         prevCard.push("8-Spades");
                         console.log(prevCard);
-                        prevCardNum.push(8);
+                       prevCardNum = 8;
                         console.log(prevCardNum);
                     }
                     var imgRep = document.getElementById('blankDeck');
@@ -806,12 +746,10 @@ document.addEventListener("DOMContentLoaded", function () {
                 if (card.style.visibility = "visible") {
                     if (prevCard.includes("9-Clubs") === true) {
                         dealing();
-                    } else if (prevCardNum.length-1 === prevCardNum.length-2){
-                        dealing();
                     } else {
                         prevCard.push("9-Clubs");
                         console.log(prevCard);
-                        prevCardNum.push(9);
+                       prevCardNum = 9;
                         console.log(prevCardNum);
                     }
                     var imgRep = document.getElementById('blankDeck');
@@ -827,12 +765,10 @@ document.addEventListener("DOMContentLoaded", function () {
                 if (card.style.visibility = "visible") {
                     if (prevCard.includes("9-Diamonds") === true) {
                         dealing();
-                    } else if (prevCardNum.length-1 === prevCardNum.length-2){
-                        dealing();
                     } else {
                         prevCard.push("9-Diamonds");
                         console.log(prevCard);
-                        prevCardNum.push(9);
+                       prevCardNum = 9;
                         console.log(prevCardNum);
                     }
                     var imgRep = document.getElementById('blankDeck');
@@ -848,12 +784,10 @@ document.addEventListener("DOMContentLoaded", function () {
                 if (card.style.visibility = "visible") {
                     if (prevCard.includes("9-Hearts") === true) {
                         dealing();
-                    } else if (prevCardNum.length-1 === prevCardNum.length-2){
-                        dealing();
                     } else {
                         prevCard.push("9-Hearts");
                         console.log(prevCard);
-                        prevCardNum.push(9);
+                       prevCardNum = 9;
                         console.log(prevCardNum);
                     }
                     var imgRep = document.getElementById('blankDeck');
@@ -869,12 +803,10 @@ document.addEventListener("DOMContentLoaded", function () {
                 if (card.style.visibility = "visible") {
                     if (prevCard.includes("9-Spades") === true) {
                         dealing();
-                    } else if (prevCardNum.length-1 === prevCardNum.length-2){
-                        dealing();
                     } else {
                         prevCard.push("9-Spades");
                         console.log(prevCard);
-                        prevCardNum.push(9);
+                       prevCardNum = 9;
                         console.log(prevCardNum);
                     }
                     var imgRep = document.getElementById('blankDeck');
@@ -896,12 +828,10 @@ document.addEventListener("DOMContentLoaded", function () {
                 if (card.style.visibility = "visible") {
                     if (prevCard.includes("10-Clubs") === true) {
                         dealing();
-                    } else if (prevCardNum.length-1 === prevCardNum.length-2){
-                        dealing();
                     } else {
                         prevCard.push("10-Clubs");
                         console.log(prevCard);
-                        prevCardNum.push(10);
+                       prevCardNum = 10;
                         console.log(prevCardNum);
                     }
                     var imgRep = document.getElementById('blankDeck');
@@ -917,12 +847,10 @@ document.addEventListener("DOMContentLoaded", function () {
                 if (card.style.visibility = "visible") {
                     if (prevCard.includes("10-Diamonds") === true) {
                         dealing();
-                    } else if (prevCardNum.length-1 === prevCardNum.length-2){
-                        dealing();
                     } else {
                         prevCard.push("10-Diamonds");
                         console.log(prevCard);
-                        prevCardNum.push(10);
+                       prevCardNum = 10;
                         console.log(prevCardNum);
                     }
                     var imgRep = document.getElementById('blankDeck');
@@ -938,12 +866,10 @@ document.addEventListener("DOMContentLoaded", function () {
                 if (card.style.visibility = "visible") {
                     if (prevCard.includes("10-Hearts") === true) {
                         dealing();
-                    } else if (prevCardNum.length-1 === prevCardNum.length-2){
-                        dealing();
                     } else {
                         prevCard.push("10-Hearts");
                         console.log(prevCard);
-                        prevCardNum.push(10);
+                       prevCardNum = 10;
                         console.log(prevCardNum);
                     }
                     var imgRep = document.getElementById('blankDeck');
@@ -959,12 +885,10 @@ document.addEventListener("DOMContentLoaded", function () {
                 if (card.style.visibility = "visible") {
                     if (prevCard.includes("10-Spades") === true) {
                         dealing();
-                    } else if (prevCardNum.length-1 === prevCardNum.length-2){
-                        dealing();
                     } else {
                         prevCard.push("10-Spades");
                         console.log(prevCard);
-                        prevCardNum.push(10);
+                       prevCardNum = 10;
                         console.log(prevCardNum);
                     }
                     var imgRep = document.getElementById('blankDeck');
@@ -986,12 +910,10 @@ document.addEventListener("DOMContentLoaded", function () {
                 if (card.style.visibility = "visible") {
                     if (prevCard.includes("Jacks-Clubs") === true) {
                         dealing();
-                    } else if (prevCardNum.length-1 === prevCardNum.length-2){
-                        dealing();
                     } else {
                         prevCard.push("Jacks-Clubs");
                         console.log(prevCard);
-                        prevCardNum.push(11);
+                       prevCardNum = 11;
                         console.log(prevCardNum);
                     }
                     var imgRep = document.getElementById('blankDeck');
@@ -1007,12 +929,10 @@ document.addEventListener("DOMContentLoaded", function () {
                 if (card.style.visibility = "visible") {
                     if (prevCard.includes("Jacks-Diamond") === true) {
                         dealing();
-                    } else if (prevCardNum.length-1 === prevCardNum.length-2){
-                        dealing();
                     } else {
                         prevCard.push("Jacks-Diamond");
                         console.log(prevCard);
-                        prevCardNum.push(11);
+                       prevCardNum = 11;
                         console.log(prevCardNum);
                     }
                     var imgRep = document.getElementById('blankDeck');
@@ -1028,12 +948,10 @@ document.addEventListener("DOMContentLoaded", function () {
                 if (card.style.visibility = "visible") {
                     if (prevCard.includes("Jacks-Hearts") === true) {
                         dealing();
-                    } else if (prevCardNum.length-1 === prevCardNum.length-2){
-                        dealing();
                     } else {
                         prevCard.push("Jacks-Hearts");
                         console.log(prevCard);
-                        prevCardNum.push(11);
+                       prevCardNum = 11;
                         console.log(prevCardNum);
                     }
                     var imgRep = document.getElementById('blankDeck');
@@ -1049,12 +967,10 @@ document.addEventListener("DOMContentLoaded", function () {
                 if (card.style.visibility = "visible") {
                     if (prevCard.includes("Jacks-Spades") === true) {
                         dealing();
-                    } else if (prevCardNum.length-1 === prevCardNum.length-2){
-                        dealing();
                     } else {
                         prevCard.push("Jacks-Spades");
                         console.log(prevCard);
-                        prevCardNum.push(11);
+                       prevCardNum = 11;
                         console.log(prevCardNum);
                     }
                     var imgRep = document.getElementById('blankDeck');
@@ -1076,12 +992,10 @@ document.addEventListener("DOMContentLoaded", function () {
                 if (card.style.visibility = "visible") {
                     if (prevCard.includes("Queen-Clubs") === true) {
                         dealing();
-                    } else if (prevCardNum.length-1 === prevCardNum.length-2){
-                        dealing();
                     } else {
                         prevCard.push("Queen-Clubs");
                         console.log(prevCard);
-                        prevCardNum.push(12);
+                       prevCardNum = 12;
                         console.log(prevCardNum);
                     }
                     var imgRep = document.getElementById('blankDeck');
@@ -1097,12 +1011,10 @@ document.addEventListener("DOMContentLoaded", function () {
                 if (card.style.visibility = "visible") {
                     if (prevCard.includes("Queen-Diamonds") === true) {
                         dealing();
-                    } else if (prevCardNum.length-1 === prevCardNum.length-2){
-                        dealing();
                     } else {
                         prevCard.push("Queen-Diamonds");
                         console.log(prevCard);
-                        prevCardNum.push(12);
+                       prevCardNum = 12;
                         console.log(prevCardNum);
                     }
                     var imgRep = document.getElementById('blankDeck');
@@ -1118,12 +1030,10 @@ document.addEventListener("DOMContentLoaded", function () {
                 if (card.style.visibility = "visible") {
                     if (prevCard.includes("Queen-Hearts") === true) {
                         dealing();
-                    } else if (prevCardNum.length-1 === prevCardNum.length-2){
-                        dealing();
                     } else {
                         prevCard.push("Queen-Hearts");
                         console.log(prevCard);
-                        prevCardNum.push(12);
+                       prevCardNum = 12;
                         console.log(prevCardNum);
                     }
                     var imgRep = document.getElementById('blankDeck');
@@ -1139,12 +1049,10 @@ document.addEventListener("DOMContentLoaded", function () {
                 if (card.style.visibility = "visible") {
                     if (prevCard.includes("Queen-Spades") === true) {
                         dealing();
-                    } else if (prevCardNum.length-1 === prevCardNum.length-2){
-                        dealing();
                     } else {
                         prevCard.push("Queen-Spades");
                         console.log(prevCard);
-                        prevCardNum.push(12);
+                       prevCardNum = 12;
                         console.log(prevCardNum);
                     }
                     var imgRep = document.getElementById('blankDeck');
@@ -1166,12 +1074,10 @@ document.addEventListener("DOMContentLoaded", function () {
                 if (card.style.visibility = "visible") {
                     if (prevCard.includes("King-Clubs") === true) {
                         dealing();
-                    } else if (prevCardNum.length-1 === prevCardNum.length-2){
-                        dealing();
                     } else {
                         prevCard.push("King-Clubs");
                         console.log(prevCard);
-                        prevCardNum.push(13);
+                       prevCardNum = 13;
                         console.log(prevCardNum);
                     }
                     var imgRep = document.getElementById('blankDeck');
@@ -1187,12 +1093,10 @@ document.addEventListener("DOMContentLoaded", function () {
                 if (card.style.visibility = "visible") {
                     if (prevCard.includes("King-Diamonds") === true) {
                         dealing();
-                    } else if (prevCardNum.length-1 === prevCardNum.length-2){
-                        dealing();
                     } else {
                         prevCard.push("King-Diamonds");
                         console.log(prevCard);
-                        prevCardNum.push(13);
+                       prevCardNum = 13;
                         console.log(prevCardNum);
                     }
                     var imgRep = document.getElementById('blankDeck');
@@ -1208,12 +1112,10 @@ document.addEventListener("DOMContentLoaded", function () {
                 if (card.style.visibility = "visible") {
                     if (prevCard.includes("King-Hearts") === true) {
                         dealing();
-                    } else if (prevCardNum.length-1 === prevCardNum.length-2){
-                        dealing();
                     } else {
                         prevCard.push("King-Hearts");
                         console.log(prevCard);
-                        prevCardNum.push(13);
+                       prevCardNum = 13;
                         console.log(prevCardNum);
                     }
                     var imgRep = document.getElementById('blankDeck');
@@ -1229,12 +1131,10 @@ document.addEventListener("DOMContentLoaded", function () {
                 if (card.style.visibility = "visible") {
                     if (prevCard.includes("King-Spades") === true) {
                         dealing();
-                    } else if (prevCardNum.length-1 === prevCardNum.length-2){
-                        dealing();
                     } else {
                         prevCard.push("King-Spades");
                         console.log(prevCard);
-                        prevCardNum.push(13);
+                       prevCardNum = 13;
                         console.log(prevCardNum);
                     }
                     var imgRep = document.getElementById('blankDeck');
@@ -1255,36 +1155,48 @@ document.addEventListener("DOMContentLoaded", function () {
         document.getElementById("deckButton").disabled = false;
         document.getElementById("loButton").disabled = true;
         document.getElementById("hiButton").disabled = true;
-        if (prevCardNum[prevCardNum.length - 1] < prevCardNum[prevCardNum.length - 2]) {
-            correct()
-        } else if (prevCardNum[prevCardNum.length - 1] > prevCardNum[prevCardNum.length - 2]) {
-            incorrect();
-        }
-        
-    
+        hi = true;
+        console.log("hi - true")
         dealing();
     });
     loButton.addEventListener("click", event => {
         document.getElementById("deckButton").disabled = false;
         document.getElementById("loButton").disabled = true;
         document.getElementById("hiButton").disabled = true;
-        if (prevCardNum[prevCardNum.length - 1] < prevCardNum[prevCardNum.length - 2]) {
-            correct()
-        } else if (prevCardNum[prevCardNum.length - 1] > prevCardNum[prevCardNum.length - 2]) {
-            incorrect();
-        }
-    
+        lo = true;
+        console.log("lo - true")
+
         dealing();
     });
     /**if the person picked the correct higher / lower button gain one point */
     function correct() {
-        
+        let correctScore = parseInt(document.getElementById("correct").innerText);
+        document.getElementById("correct").innerText = ++correctScore;
+        hi = false;
+        lo = false;
+        if (correctScore === 4) {
+            document.getElementById("correct").innerText = "0";
+            winning()
+        }
     }
-    /**if the person picked the correct higher / lower button gain one point */    
+    /**if the person picked the correct higher / lower button gain one point */
     function incorrect() {
+        alert("Oh dear, that's one wrong :(")
+        let lossScore = parseInt(document.getElementById("losses").innerText);
+        document.getElementById("losses").innerText = ++lossScore;
+        hi = false;
+        lo = false;
+    }
 
+    /**if a person gets 13 correct add 1 to winning score */
+    function winning() {
+        let winScore = parseInt(document.getElementById("wins").innerText);
+        document.getElementById("wins").innerText = ++winScore;
+        alert("Well Done! You've won!");
+        hi = false;
+        lo = false;
     }
 });
 
 /* * NOTES
-* An array for used images, make sure it's checked before continueing onto the showing images section. */
+* An array for used images, make sure it's checked before continuing onto the showing images section. */
