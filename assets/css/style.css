@@ -220,6 +220,8 @@ button:hover {
     }
     #rules {
         margin-left: 2rem;
+        padding-left: 2rem;
+        flex-direction: column;
     }
 }
 
