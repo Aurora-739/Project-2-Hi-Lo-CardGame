@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", function () {
             document.getElementById("loButton").disabled = true;
             document.getElementById("hiButton").disabled = true;
 
-            dealing()
+            dealing();
         } else {
             howToPlay.style.visibility = "hidden";
             playSurf.style.visibility = "hidden";
@@ -27,56 +27,57 @@ document.addEventListener("DOMContentLoaded", function () {
     let hi = false;
     let lo = false;
     let prevCardNum = "";
+    let prevCard = [];
     /** The Dealing function */
     function dealing() {
         let randomNum = Math.floor(Math.random() * 14);
         while (randomNum === 0) {
             randomNum = Math.floor(Math.random() * 14);
         }
-        console.log(randomNum)
-        prevCard = [];
+        console.log(randomNum);
+        
         console.log(prevCard);
         console.log(prevCardNum);
         if (hi === true) {
             if (randomNum >= prevCardNum) {
-                correct()
+                correct();
             } else {
-                incorrect()
+                incorrect();
             }
         } else if (lo === true) {
             if (randomNum <= prevCardNum) {
-                correct()
+                correct();
             } else {
-                incorrect()
+                incorrect();
             }
         } 
 
         if (randomNum === 1) {
-            Aces()
+            Aces();
         } else if (randomNum === 2) {
-            Twos()
+            Twos();
         } else if (randomNum === 3) {
-            Threes()
+            Threes();
         } else if (randomNum === 4) {
-            Fours()
+            Fours();
         } else if (randomNum === 5) {
-            Fives()
+            Fives();
         } else if (randomNum === 6) {
-            Sixes()
+            Sixes();
         } else if (randomNum === 7) {
-            Sevens()
+            Sevens();
         } else if (randomNum === 8) {
-            Eights()
+            Eights();
         } else if (randomNum === 9) {
-            Nines()
+            Nines();
         } else if (randomNum === 10) {
-            Tens()
+            Tens();
         } else if (randomNum === 11) {
-            Jacks()
+            Jacks();
         } else if (randomNum === 12) {
-            Queens()
+            Queens();
         } else if (randomNum === 13) {
-            Kings()
+            Kings();
         }
     }
     /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Aces ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
@@ -1148,7 +1149,6 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
     /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~Hi / Lo Buttons ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
-    const hiLoButtons = document.getElementsByClassName('hilowButtons');
     const hiButton = document.getElementById('hiButton');
     const loButton = document.getElementById('loButton');
     hiButton.addEventListener("click", event => {
