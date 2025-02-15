@@ -1,4 +1,4 @@
-## The Hi-Lo Card Game
+# The Hi-Lo Card Game
 
 The Hi-Lo Card GAme is a digital card game of chance. It is designed as a fun pass time for those who enjoy games such as solitairre but don't have enough room (e.g on public transit) or those who want to be able to access a card game at all times (when having internet access) and from any device. The cards are dealt and "shuffled" more randomlly and simpler than a regular deck and so creaes a more random and therefore "fair" game. 
 
@@ -6,21 +6,29 @@ users of this game will learn teh rules from the rules box in the bottom left an
 
 ![image](https://github.com/user-attachments/assets/aa5dd9f1-d251-4eed-bebe-7c4f7bbdbc48)
 Image of the website _before_ the start button is clicked.
+
 ![image](https://github.com/user-attachments/assets/1290693b-fcd9-4dc9-90fa-440075f04387)
 Image of the website _after_ the start button (and deck button) are clicked. 
 
-### Connecting your Mongo database
+## Features
 
-- **Connect to Mongo CLI on a IDE**
-- navigate to your MongoDB Clusters Sandbox
-- click **"Connect"** button
-- select **"Connect with the MongoDB shell"**
-- select **"I have the mongo shell installed"**
-- choose **mongosh (2.0 or later)** for : **"Select your mongo shell version"**
-- choose option: **"Run your connection string in your command line"**
-- in the terminal, paste the copied code `mongo "mongodb+srv://<CLUSTER-NAME>.mongodb.net/<DBname>" --apiVersion 1 --username <USERNAME>`
-  - replace all `<angle-bracket>` keys with your own data
-- enter password _(will not echo **\*\*\*\*** on screen)_
+### Exisiting Features
+- **Header**
+  - Is featured at the top of the page.
+  - It has no physical function (cannot be clicked and does not change whe hovered), instead it informs the user as to what the game ("Hi-Lo ~ Card Game") is and sets the tone for the styling in the rest of the page.
+  - The font is playful and contrasts the dark backgorund with a light cream colour.
+
+![image](https://github.com/user-attachments/assets/e423e345-0c9d-42d1-aade-316741ac8198)
+
+- **The Deck**
+  - Situated on the left of the screen and varying in size depening on screen size, the deck functions as a deck would in a regular game. It deals the cards when clicked on.
+  - Instructions on how to use the deck can be found in the instructions box at the bottom of the screen.
+  - This button is functional and interactive once per round. After it is clicked it cannot be clicked again until the hi or lo button has been clicked.
+ 
+  ![image](https://github.com/user-attachments/assets/aae9b1a2-70e7-4d90-914c-9dec9fad9668)
+
+- **Hi / Lo Buttons**
+
 
 ------
 
