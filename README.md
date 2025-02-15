@@ -70,6 +70,12 @@ Again, the aspect ratios are off slightly, this is again due to the size I wante
 
 ## Bugs
 
+**Solved Bugs**
+- A bug I solved was that when deployed the image I had used in JavaScript to create an image (a card) in the play area had not worked as I'd hoped. 
+- I spent a while researching and looking back at the notes porvided by the Code institute as well as external sources (such as Bro Code (a youtube channel) as well as W3Schools and a few stack overflow threads) until i deiscovered that to do what I wanted I needed to have an image already there adn instead to replace it. I did this by having a green image that matches the background of the page and replacing that with a card when the deck is clicked.
+  
+- Another bug I solved was that when I deployed my project I dicovered that the image of the deck was not present.
+- After playing around with different images and looking up css images I found that the fix that worked more efficiently and frequently was outsourcign the image and javing a link to an external image on the deck button instead of trying to get one from my assets. Although this causes the best practices section on lightlhouse have a lower score, ultimately I believe that this was the best option I could come up with at this time.
 
-
+### Unfixed Bugs
 ------
