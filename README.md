@@ -68,7 +68,7 @@ Again, the aspect ratios are off slightly, this is again due to the size I wante
 
 ------
 
-## Bugs
+### Bugs
 
 **Solved Bugs**
 - A bug I solved was that when deployed the image I had used in JavaScript to create an image (a card) in the play area had not worked as I'd hoped. 
@@ -78,4 +78,5 @@ Again, the aspect ratios are off slightly, this is again due to the size I wante
 - After playing around with different images and looking up css images I found that the fix that worked more efficiently and frequently was outsourcign the image and javing a link to an external image on the deck button instead of trying to get one from my assets. Although this causes the best practices section on lightlhouse have a lower score, ultimately I believe that this was the best option I could come up with at this time.
 
 ### Unfixed Bugs
+- An unfixed bug is that occastionally when the deck is clicked on two images flash up one after the other. I believe that with is due to the complicated JavaScript loading to quicling withought doing all the checks. When I use the devTools console and sources using breakpints to slow down the code and make it load slower, this does not happen. 
 ------
