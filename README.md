@@ -68,7 +68,7 @@ Again, the aspect ratios are off slightly, this is again due to the size I wante
 
 ------
 
-## Bugs
+### Bugs
 
 **Solved Bugs**
 - A bug I solved was that when deployed the image I had used in JavaScript to create an image (a card) in the play area had not worked as I'd hoped. 
@@ -77,5 +77,36 @@ Again, the aspect ratios are off slightly, this is again due to the size I wante
 - Another bug I solved was that when I deployed my project I dicovered that the image of the deck was not present.
 - After playing around with different images and looking up css images I found that the fix that worked more efficiently and frequently was outsourcign the image and javing a link to an external image on the deck button instead of trying to get one from my assets. Although this causes the best practices section on lightlhouse have a lower score, ultimately I believe that this was the best option I could come up with at this time.
 
+- Another bug I solved was that the when the card had already been played it would deal a new card, however this card was not equal value to the other card and so would be incorrect.
+- This was solved by instead of jumping back to the dealing() function, jumping only back to the function where teh second number (the value of the suit) was dealt and continuing from there. 
+
 ### Unfixed Bugs
+- An unfixed bug is that occastionally when the deck is clicked on two images flash up one after the other. They are of euqal value (e.g. both queens), I believe this is due to the jumping back to the suits however I am unsure. This bug does not severely alter gamplay and is usally completely unoticeable.
+
+### Validator Testing
+- HTML
+  - No errors were returned when passing through the official W3C validator.
+
+- CSS
+  - No errors were returned when passing through the official (Jigsaw) validator.
+
 ------
+
+## Deployment
+
+- The site was deployed to GitHub Pages. The steps to deploy are as follows:
+  - In the GitHub repository navigate to the setting tab.
+  - Follow the left bar down until you find pagees, click on it.
+  - From the source section on the drop-down menu, select the master branch.
+  - Click save to deploy the website.
+ 
+  ------
+
+## Credits 
+
+**Content**
+- The code for the image button was inspired by and helped by W3Schools (https://www.w3schools.com/howto/howto_css_button_on_image.asp) however changes were made.
+- The start button and play area visibility in JS was paralleled using Bro Codes video (though some changes were made) (https://www.youtube.com/watch?v=MkvHPOT4RS8).
+
+**Media**
+- The deck image was taken from google.
