@@ -38,7 +38,6 @@ document.addEventListener("DOMContentLoaded", function () {
         console.log(randomNum);
         
         console.log(prevCard);
-        /*console.log(prevCardNum);*/
         if (hi === true) {
             if (randomNum >= prevCardNum) {
                 correct();
