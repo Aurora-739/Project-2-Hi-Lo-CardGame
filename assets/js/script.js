@@ -4,14 +4,21 @@ document.addEventListener("DOMContentLoaded", function () {
     const strtBut = document.getElementById('startButton');
     const heading = document.getElementById('title');
     const card = document.getElementById('card-img');
+    const loBut = document.getElementById('loButton');
+    const hiBut = document.getElementById('hiButton');
+    const correctSpan = document.getElementById('correct');
 
 
     // ~~~~~ 0 On click show playing surface
     strtBut.addEventListener("click", () =>{
         playSurf.style.visibility = "visible";
     });
+    // all the lists & guesses (card value, card numberical value, hi & lo)
     const cardList = [];
     const cardNumList = [];
+    const guessHi = false;
+    const guessLo = false;
+    let correctCount = 0;
 
     // ~~~~~ 1 Choose a card randomly from card_images
     const imageFileNames = [
@@ -31,6 +38,7 @@ document.addEventListener("DOMContentLoaded", function () {
     ];
     const numValues = {};
     // Function to hold the assigned numerical value for each card.
+    // ~~~~~ 3 Find the card's numerical value.
     function assignNumValue(){
             ['Ace-cl.JPG','Ace-d.JPG','Ace-h.JPG','Ace-Spades.JPG'].forEach(item => numValues[item] = 1);
             ['2-cl.JPG','2-d.JPG','2-h.JPG','2-Sp.JPG'].forEach(item => numValues[item] = 2);
@@ -61,6 +69,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         // ~~~~~ 2.1 If the card has not been used the card can be displayed (checked in 2)
         //Set it up on the page on click.
+        // ~~~~~ 5 Log card value & numerical values to list
         deckBut.addEventListener("click", () =>{
             card.src = imagePath;
             console.log(card.src);
@@ -75,21 +84,64 @@ document.addEventListener("DOMContentLoaded", function () {
     // ~~~~~ 2 Check if the card value has been used before (this round)
     function checkCard(randomCard, cardList){
         if (cardList.includes(randomCard)) {
-            pickingCard() // got to picking card function (1)
+            pickingCard(); // got to picking card function (1)
         }
     }
     
-    // ~~~~~ 3 Find the card's numerical value.
-
-
     // ~~~~~ 4 Compare the card to the prev card in list & see if it matches the users hi/lo variable
-
-
-    // ~~~~~ 5 Log card value & numerical values to list
+    if (cardNumList >= 2) {
+        const prevCard = cardNumList[cardNumList.length - 2];
+        const currentCard = cardNumList[cardNumList.length - 1];
+    }
+    
+    if (currentCard > prevCard) {
+        console.log("Higher")
+        if (guessHi = true) {
+            correctCount++;
+            correctSpan.textContent = correctCount;
+            guessHi = false;
+        } else if (guessLo = true) {
+            correctCount--;
+            correctSpan.textContent = correctCount;
+            guessLo = false
+        }
+    } else if (currentCard < prevCard) {
+        console.log("Lower!")
+        if (guessHi = true) {
+            correctCount--;
+            correctSpan.textContent = correctCount;
+            guessLo = false
+        } else if (guessLo = true) {
+            correctCount++;
+            correctSpan.textContent = correctCount;
+            guessHi = false;
+        }
+    } else {
+        console.log("Same Value!")
+        if (guessHi = true) {
+            correctCount++;
+            correctSpan.textContent = correctCount;
+            guessHi = false;
+        } else if (guessLo = true) {
+            correctCount++;
+            correctSpan.textContent = correctCount;
+            guessHi = false;
+        }
+    }
 
 
     // ~~~~~ 6 User picks HI / Lo
+    hiBut.addEventListener("click", () =>{
+        guessHi = true;
+        hiBut.disabled = true
+        loBut.disabled = true
+    });
 
+    loBut.addEventListener("click", () =>{
+        guessLo = true;
+        hiBut.disabled = true
+        loBut.disabled = true
+    });
 
     // ~~~~~ 7 Log users Hi / Lo variable choice & loop back to 1
 
