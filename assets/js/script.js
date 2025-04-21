@@ -2,12 +2,12 @@ document.addEventListener("DOMContentLoaded", function () {
     const deckButton = document.getElementById('deckButton');
     const playSurf = document.getElementById('playingSurface');
     const strtBut = document.getElementById('startButton');
+    const heading = document.getElementById('title');
 
 
     // ~~~~~ 0 On click show playing surface
     strtBut.addEventListener("click", () =>{
         playSurf.style.visibility = "visible";
-
     });
 
     // ~~~~~ 1 Choose a card randomly from card_images
@@ -53,6 +53,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
     // ~~~~~ 7 Log users Hi / Lo variable choice & loop back to 1
+
+    // ~~~~~ 8 If heading is clicked on send back to main screen.
+    heading.addEventListener("click", () =>{
+        window.location.href = "http://127.0.0.1:8000/";
+    });
 }
 
 /* * NOTES
