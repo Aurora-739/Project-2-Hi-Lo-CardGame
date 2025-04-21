@@ -1,11 +1,14 @@
 document.addEventListener("DOMContentLoaded", function () {
-    const startButton = document.getElementById('start');
-    const howToPlay = document.getElementById('rulescountBox');
-    const playSurf = document.getElementById('playingSurface');
     const deckButton = document.getElementById('deckButton');
-    const deck = document.getElementById('deck');
-    const card = document.getElementById('inPlay');
-    var imgRep = document.getElementById('blankDeck');
+    const playSurf = document.getElementById('playingSurface');
+    const strtBut = document.getElementById('startButton');
+
+
+    // ~~~~~ 0 On click show playing surface
+    strtBut.addEventListener("click", () =>{
+        playSurf.style.visibility = "visible";
+
+    });
 
     // ~~~~~ 1 Choose a card randomly from card_images
     const imageFileNames = [
@@ -28,8 +31,11 @@ document.addEventListener("DOMContentLoaded", function () {
     const randomCard = imageFileNames[randomIndex]
     //Create a filepath to the image.
     imagePath = `assets/card_images/${randomCard}`;
-    //Set it up on the page.
-    document.getElementById("card-img").src = imagePath;
+    //Set it up on the page on click.
+        deckButton.addEventListener("click", () =>{
+        });
+        
+        document.getElementById("card-img").src = imagePath;
 
     // ~~~~~ 2 Check if the card value has been used before (this round)
 
