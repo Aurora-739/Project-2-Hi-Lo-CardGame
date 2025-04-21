@@ -7,9 +7,10 @@ document.addEventListener("DOMContentLoaded", function () {
     const card = document.getElementById('inPlay');
     var imgRep = document.getElementById('blankDeck');
 
-    
+    //Choose a card randomly from card_images
 
 
 }
 
 /* * NOTES
+*/)
