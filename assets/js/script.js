@@ -29,6 +29,23 @@ document.addEventListener("DOMContentLoaded", function () {
         'Queen-cl.JPG','Queen-d.JPG','Queen-h.JPG','Queen-sp.JPG',
         'King-cl.JPG','King-d.JPG','King-h.JPG','King-sp.JPG',
     ];
+
+    function assignNumValue(images){
+        const numValues = {};
+            ['Ace-cl.JPG','Ace-d.JPG','Ace-h.JPG','Ace-Spades.JPG'].forEach(item => numValues[images] = 1);
+            ['2-cl.JPG','2-d.JPG','2-h.JPG','2-Sp.JPG'].forEach(item => numValues[images] = 2);
+            ['3-cl.JPG','3-d.JPG','3-h.JPG','3-Sp.JPG'].forEach(item => numValues[images] = 3);
+            ['4-cl.JPG','4-d.JPG','4-h.JPG','4-Sp.JPG'].forEach(item => numValues[images] = 4);
+            ['5-cl.JPG','5-d.JPG','5-h.JPG','5-sp.JPG'].forEach(item => numValues[images] = 5);
+            ['6-cl.JPG','6-d.JPG','6-h.JPG','6-sp.JPG'].forEach(item => numValues[images] = 6);
+            ['7-cl.JPG','7-d.JPG','7-h.JPG','7-sp.JPG'].forEach(item => numValues[images] = 7);
+            ['8-cl.JPG','8-d.JPG','8-h.JPG','8-sp.JPG'].forEach(item => numValues[images] = 8);
+            ['9-cl.JPG','9-d.JPG','9-h.JPG','9-sp.JPG'].forEach(item => numValues[images] = 9);
+            ['10-cl.JPG','10-d.JPG','10-h.JPG','10-sp.JPG'].forEach(item => numValues[images] = 10);
+            ['Jack-cl.JPG','jack-d.JPG','Jack-h.JPG','Jack-sp.JPG'].forEach(item => numValues[images] = 11);
+            ['Queen-cl.JPG','Queen-d.JPG','Queen-h.JPG','Queen-sp.JPG'].forEach(item => numValues[images] = 12);
+            ['King-cl.JPG','King-d.JPG','King-h.JPG','King-sp.JPG'].forEach(item => numValues[images] = 13);
+    }
     function pickingCard() {
         /**Choose a card randomly from card_images */
         //pick a random one.
