@@ -9,9 +9,9 @@ document.addEventListener("DOMContentLoaded", function () {
     // ~~~~~ 0 On click show playing surface
     strtBut.addEventListener("click", () =>{
         playSurf.style.visibility = "visible";
-        cardList = []
-        cardNumList = []
     });
+    const cardList = [];
+    const cardNumList = [];
 
     // ~~~~~ 1 Choose a card randomly from card_images
     const imageFileNames = [
@@ -40,25 +40,26 @@ document.addEventListener("DOMContentLoaded", function () {
         imagePath = `assets/card_images/${randomCard}`;
         console.log(imagePath);
 
-        checkCard() // go to check card function (2)
+        checkCard(randomCard, cardList) // go to check card function (2)
+
+        // ~~~~~ 2.1 If the card has not been used the card can be displayed (checked in 2)
+        //Set it up on the page on click.
+        deckBut.addEventListener("click", () =>{
+            card.src = imagePath;
+            console.log(card.src);
+            card.alt = randomCard;
+            cardList.push(randomCard);
+            console.log(cardList)
+        });
     }
    
     // ~~~~~ 2 Check if the card value has been used before (this round)
-    function checkCard(){
+    function checkCard(randomCard, cardList){
         if (cardList.includes(randomCard)) {
             pickingCard() // got to picking card function (1)
         }
     }
-    // ~~~~~ 2.1 If the card has not been used the card can be displayed if not, got back to 1
-    //Set it up on the page on click.
-    deckBut.addEventListener("click", () =>{
-        card.src = imagePath;
-        console.log(card.src);
-        card.alt = randomCard;
-        cardList = [randomCard]
-        console.log(cardList)
-    });
-
+    
     // ~~~~~ 3 Find the card's numerical value.
 
 
@@ -77,6 +78,12 @@ document.addEventListener("DOMContentLoaded", function () {
     heading.addEventListener("click", () =>{
         window.location.href = "http://127.0.0.1:8000/";
     });
+
+    // ~~~~~ 9 Call functions
+    function home(){
+        pickingCard()
+    }
+    home()
 }
 
 /* * NOTES
