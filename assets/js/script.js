@@ -1,13 +1,16 @@
 document.addEventListener("DOMContentLoaded", function () {
-    const deckButton = document.getElementById('deckButton');
+    const deckBut = document.getElementById('deckButton');
     const playSurf = document.getElementById('playingSurface');
     const strtBut = document.getElementById('startButton');
     const heading = document.getElementById('title');
+    const card = document.getElementById('card-img');
 
 
     // ~~~~~ 0 On click show playing surface
     strtBut.addEventListener("click", () =>{
         playSurf.style.visibility = "visible";
+        cardList = []
+        cardNumList = []
     });
 
     // ~~~~~ 1 Choose a card randomly from card_images
@@ -26,19 +29,35 @@ document.addEventListener("DOMContentLoaded", function () {
         'Queen-cl.JPG','Queen-d.JPG','Queen-h.JPG','Queen-sp.JPG',
         'King-cl.JPG','King-d.JPG','King-h.JPG','King-sp.JPG',
     ];
-    //pick a random one.
-    const randomIndex = Math.floor(Math.random()*imageFileNames.length);
-    const randomCard = imageFileNames[randomIndex]
-    //Create a filepath to the image.
-    imagePath = `assets/card_images/${randomCard}`;
-    //Set it up on the page on click.
-        deckButton.addEventListener("click", () =>{
-        });
-        
-        document.getElementById("card-img").src = imagePath;
+    function pickingCard() {
+        /**Choose a card randomly from card_images */
+        //pick a random one.
+        const randomIndex = Math.floor(Math.random()*imageFileNames.length);
+        console.log(randomIndex);
+        const randomCard = imageFileNames[randomIndex]
+        console.log(randomCard);
+        //Create a filepath to the image.
+        imagePath = `assets/card_images/${randomCard}`;
+        console.log(imagePath);
 
+        checkCard() // go to check card function (2)
+    }
+   
     // ~~~~~ 2 Check if the card value has been used before (this round)
-
+    function checkCard(){
+        if (cardList.includes(randomCard)) {
+            pickingCard() // got to picking card function (1)
+        }
+    }
+    // ~~~~~ 2.1 If the card has not been used the card can be displayed if not, got back to 1
+    //Set it up on the page on click.
+    deckBut.addEventListener("click", () =>{
+        card.src = imagePath;
+        console.log(card.src);
+        card.alt = randomCard;
+        cardList = [randomCard]
+        console.log(cardList)
+    });
 
     // ~~~~~ 3 Find the card's numerical value.
 
