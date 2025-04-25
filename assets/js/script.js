@@ -7,156 +7,173 @@ document.addEventListener("DOMContentLoaded", function () {
     const loBut = document.getElementById('loButton');
     const hiBut = document.getElementById('hiButton');
     const correctSpan = document.getElementById('correct');
-
+    const botBox = document.getElementById('rulescountBox');
 
     // ~~~~~ 0 On click show playing surface
-    strtBut.addEventListener("click", () =>{
+    strtBut.addEventListener("click", () => {
         playSurf.style.visibility = "visible";
+        card.style.visibility = "visible";
+        botBox.style.visibility = "visible";
     });
     // all the lists & guesses (card value, card numberical value, hi & lo)
     const cardList = [];
     const cardNumList = [];
-    const guessHi = false;
-    const guessLo = false;
+    var guessHi = false;
+    var guessLo = false;
     let correctCount = 0;
 
     // ~~~~~ 1 Choose a card randomly from card_images
     const imageFileNames = [
-        'Ace-cl.JPG','Ace-d.JPG','Ace-h.JPG','Ace-Spades.JPG',
-        '2-cl.JPG','2-d.JPG','2-h.JPG','2-Sp.JPG',
-        '3-cl.JPG','3-d.JPG','3-h.JPG','3-Sp.JPG',
-        '4-cl.JPG','4-d.JPG','4-h.JPG','4-Sp.JPG',
-        '5-cl.JPG','5-d.JPG','5-h.JPG','5-sp.JPG',
-        '6-cl.JPG','6-d.JPG','6-h.JPG','6-sp.JPG',
-        '7-cl.JPG','7-d.JPG','7-h.JPG','7-sp.JPG',
-        '8-cl.JPG','8-d.JPG','8-h.JPG','8-sp.JPG',
-        '9-cl.JPG','9-d.JPG','9-h.JPG','9-sp.JPG',
-        '10-cl.JPG','10-d.JPG','10-h.JPG','10-sp.JPG',
-        'Jack-cl.JPG','jack-d.JPG','Jack-h.JPG','Jack-sp.JPG',
-        'Queen-cl.JPG','Queen-d.JPG','Queen-h.JPG','Queen-sp.JPG',
-        'King-cl.JPG','King-d.JPG','King-h.JPG','King-sp.JPG',
+        'Ace-cl.JPG', 'Ace-d.JPG', 'Ace-h.JPG', 'Ace-Spades.JPG',
+        '2-cl.JPG', '2-d.JPG', '2-h.JPG', '2-Sp.JPG',
+        '3-cl.JPG', '3-d.JPG', '3-h.JPG', '3-Sp.JPG',
+        '4-cl.JPG', '4-d.JPG', '4-h.JPG', '4-Sp.JPG',
+        '5-cl.JPG', '5-d.JPG', '5-h.JPG', '5-sp.JPG',
+        '6-cl.JPG', '6-d.JPG', '6-h.JPG', '6-sp.JPG',
+        '7-cl.JPG', '7-d.JPG', '7-h.JPG', '7-sp.JPG',
+        '8-cl.JPG', '8-d.JPG', '8-h.JPG', '8-sp.JPG',
+        '9-cl.JPG', '9-d.JPG', '9-h.JPG', '9-sp.JPG',
+        '10-cl.JPG', '10-d.JPG', '10-h.JPG', '10-sp.JPG',
+        'Jack-cl.JPG', 'jack-d.JPG', 'Jack-h.JPG', 'Jack-sp.JPG',
+        'Queen-cl.JPG', 'Queen-d.JPG', 'Queen-h.JPG', 'Queen-sp.JPG',
+        'King-cl.JPG', 'King-d.JPG', 'King-h.JPG', 'King-sp.JPG',
     ];
-    const numValues = {};
+    const numValues = [];
     // Function to hold the assigned numerical value for each card.
     // ~~~~~ 3 Find the card's numerical value.
-    function assignNumValue(){
-            ['Ace-cl.JPG','Ace-d.JPG','Ace-h.JPG','Ace-Spades.JPG'].forEach(item => numValues[item] = 1);
-            ['2-cl.JPG','2-d.JPG','2-h.JPG','2-Sp.JPG'].forEach(item => numValues[item] = 2);
-            ['3-cl.JPG','3-d.JPG','3-h.JPG','3-Sp.JPG'].forEach(item => numValues[item] = 3);
-            ['4-cl.JPG','4-d.JPG','4-h.JPG','4-Sp.JPG'].forEach(item => numValues[item] = 4);
-            ['5-cl.JPG','5-d.JPG','5-h.JPG','5-sp.JPG'].forEach(item => numValues[item] = 5);
-            ['6-cl.JPG','6-d.JPG','6-h.JPG','6-sp.JPG'].forEach(item => numValues[item] = 6);
-            ['7-cl.JPG','7-d.JPG','7-h.JPG','7-sp.JPG'].forEach(item => numValues[item] = 7);
-            ['8-cl.JPG','8-d.JPG','8-h.JPG','8-sp.JPG'].forEach(item => numValues[item] = 8);
-            ['9-cl.JPG','9-d.JPG','9-h.JPG','9-sp.JPG'].forEach(item => numValues[item] = 9);
-            ['10-cl.JPG','10-d.JPG','10-h.JPG','10-sp.JPG'].forEach(item => numValues[item] = 10);
-            ['Jack-cl.JPG','jack-d.JPG','Jack-h.JPG','Jack-sp.JPG'].forEach(item => numValues[item] = 11);
-            ['Queen-cl.JPG','Queen-d.JPG','Queen-h.JPG','Queen-sp.JPG'].forEach(item => numValues[item] = 12);
-            ['King-cl.JPG','King-d.JPG','King-h.JPG','King-sp.JPG'].forEach(item => numValues[item] = 13);
+    function assignNumValue() {
+        ['Ace-cl.JPG', 'Ace-d.JPG', 'Ace-h.JPG', 'Ace-Spades.JPG'].forEach(item => numValues[item] = 1);
+        ['2-cl.JPG', '2-d.JPG', '2-h.JPG', '2-Sp.JPG'].forEach(item => numValues[item] = 2);
+        ['3-cl.JPG', '3-d.JPG', '3-h.JPG', '3-Sp.JPG'].forEach(item => numValues[item] = 3);
+        ['4-cl.JPG', '4-d.JPG', '4-h.JPG', '4-Sp.JPG'].forEach(item => numValues[item] = 4);
+        ['5-cl.JPG', '5-d.JPG', '5-h.JPG', '5-sp.JPG'].forEach(item => numValues[item] = 5);
+        ['6-cl.JPG', '6-d.JPG', '6-h.JPG', '6-sp.JPG'].forEach(item => numValues[item] = 6);
+        ['7-cl.JPG', '7-d.JPG', '7-h.JPG', '7-sp.JPG'].forEach(item => numValues[item] = 7);
+        ['8-cl.JPG', '8-d.JPG', '8-h.JPG', '8-sp.JPG'].forEach(item => numValues[item] = 8);
+        ['9-cl.JPG', '9-d.JPG', '9-h.JPG', '9-sp.JPG'].forEach(item => numValues[item] = 9);
+        ['10-cl.JPG', '10-d.JPG', '10-h.JPG', '10-sp.JPG'].forEach(item => numValues[item] = 10);
+        ['Jack-cl.JPG', 'jack-d.JPG', 'Jack-h.JPG', 'Jack-sp.JPG'].forEach(item => numValues[item] = 11);
+        ['Queen-cl.JPG', 'Queen-d.JPG', 'Queen-h.JPG', 'Queen-sp.JPG'].forEach(item => numValues[item] = 12);
+        ['King-cl.JPG', 'King-d.JPG', 'King-h.JPG', 'King-sp.JPG'].forEach(item => numValues[item] = 13);
+        return numValues
     }
     function pickingCard() {
         /**Choose a card randomly from card_images */
         //pick a random one.
-        const randomIndex = Math.floor(Math.random()*imageFileNames.length);
+        const randomIndex = Math.floor(Math.random() * imageFileNames.length);
         console.log(randomIndex);
-        const randomCard = imageFileNames[randomIndex]
+        const randomCard = imageFileNames[randomIndex];
         console.log(randomCard);
         //Create a filepath to the image.
         imagePath = `assets/card_images/${randomCard}`;
         console.log(imagePath);
 
         checkCard(randomCard, cardList) // go to check card function (2)
-
-        // ~~~~~ 2.1 If the card has not been used the card can be displayed (checked in 2)
-        //Set it up on the page on click.
-        // ~~~~~ 5 Log card value & numerical values to list
-        deckBut.addEventListener("click", () =>{
-            card.src = imagePath;
-            console.log(card.src);
-            card.alt = randomCard;
-            cardList.push(randomCard);
-            cardNumList.push(numValues[randomCard]);
-            console.log(cardNumList);
-            console.log(cardList);
-        });
+        return randomCard
     }
-   
+    // ~~~~~ 2.1 If the card has not been used the card can be displayed (checked in 2)
+    //Set it up on the page on click.
+    // ~~~~~ 5 Log card value & numerical values to list
+    deckBut.addEventListener("click", () => {
+        let randomCard = pickingCard()
+        let numValues = assignNumValue()
+        card.src = imagePath;
+        console.log(card.src);
+        card.alt = randomCard;
+        cardList.push(randomCard);
+        cardNumList.push(numValues[randomCard]);
+        console.log(cardNumList);
+        console.log(cardList);
+        deckBut.disabled = true;
+        hiBut.disabled = false;
+        loBut.disabled = false;
+
+        // if the number of cards in the list is more than or equal to 2, checks to see if player has won
+        if (cardNumList.length >= 2) {
+            const prevCard = cardNumList[cardNumList.length - 2];
+            const currentCard = cardNumList[cardNumList.length - 1];
+            if (currentCard > prevCard) {
+                if (guessHi = true) {
+                    correctCount++;
+                    correctSpan.textContent = correctCount;
+                    guessHi = false;
+                    console.log("Yay! That's correct!");
+                } else if (guessLo = true) {
+                    correctCount--;
+                    correctSpan.textContent = correctCount;
+                    guessLo = false;
+                    console.log("Oh no! That's wrong!");
+                } else if (currentCard < prevCard) {
+                    if (guessHi = true) {
+                        correctCount--;
+                        correctSpan.textContent = correctCount;
+                        guessLo = false;
+                        console.log("Oh no! That's wrong!");
+                    } else if (guessLo = true) {
+                        correctCount++;
+                        correctSpan.textContent = correctCount;
+                        guessHi = false;
+                        console.log("Yay! That's correct!");
+                    }
+                } else {
+                    if (guessHi = true) {
+                        guessHi = false;
+                        console.log("Same value!");
+                    } else if (guessLo = true) {
+                        guessHi = false;
+                        console.log("Same Value!");
+                    }
+                }
+            }
+        }
+    });
+
     // ~~~~~ 2 Check if the card value has been used before (this round)
-    function checkCard(randomCard, cardList){
+    function checkCard(randomCard, cardList) {
         if (cardList.includes(randomCard)) {
             pickingCard(); // got to picking card function (1)
         }
     }
-    
+
     // ~~~~~ 4 Compare the card to the prev card in list & see if it matches the users hi/lo variable
-    if (cardNumList >= 2) {
-        const prevCard = cardNumList[cardNumList.length - 2];
-        const currentCard = cardNumList[cardNumList.length - 1];
-    }
     
-    if (currentCard > prevCard) {
-        console.log("Higher")
-        if (guessHi = true) {
-            correctCount++;
-            correctSpan.textContent = correctCount;
-            guessHi = false;
-        } else if (guessLo = true) {
-            correctCount--;
-            correctSpan.textContent = correctCount;
-            guessLo = false
-        }
-    } else if (currentCard < prevCard) {
-        console.log("Lower!")
-        if (guessHi = true) {
-            correctCount--;
-            correctSpan.textContent = correctCount;
-            guessLo = false
-        } else if (guessLo = true) {
-            correctCount++;
-            correctSpan.textContent = correctCount;
-            guessHi = false;
-        }
-    } else {
-        console.log("Same Value!")
-        if (guessHi = true) {
-            correctCount++;
-            correctSpan.textContent = correctCount;
-            guessHi = false;
-        } else if (guessLo = true) {
-            correctCount++;
-            correctSpan.textContent = correctCount;
-            guessHi = false;
-        }
-    }
-
-
     // ~~~~~ 6 User picks HI / Lo
-    hiBut.addEventListener("click", () =>{
+    hiBut.addEventListener("click", () => {
+        console.log("hi button has been clicked")
         guessHi = true;
-        hiBut.disabled = true
-        loBut.disabled = true
+        hiBut.disabled = true;
+        loBut.disabled = true;
+        deckBut.disabled = false;
+        assignNumValue()
     });
 
-    loBut.addEventListener("click", () =>{
+    loBut.addEventListener("click", () => {
+        console.log("lo button has been clicked")
         guessLo = true;
-        hiBut.disabled = true
-        loBut.disabled = true
+        hiBut.disabled = true;
+        loBut.disabled = true;
+        deckBut.disabled = false;
+        assignNumValue()
     });
+
+
 
     // ~~~~~ 7 Log users Hi / Lo variable choice & loop back to 1
 
     // ~~~~~ 8 If heading is clicked on send back to main screen.
-    heading.addEventListener("click", () =>{
+    heading.addEventListener("click", () => {
         window.location.href = "http://127.0.0.1:8000/";
     });
 
     // ~~~~~ 9 Call functions
-    function home(){
-        assignNumValue()
-        pickingCard()
-    }
-    home()
-}
+    //function home() {
+    //    assignNumValue()
+    //    pickingCard()
+
+    //}
+    //home()
+    assignNumValue()
+});
 
 /* * NOTES
-*/)
+*/
