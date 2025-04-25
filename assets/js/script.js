@@ -151,7 +151,6 @@ hiBut.addEventListener("click", () => {
     hiBut.disabled = true;
     loBut.disabled = true;
     deckBut.disabled = false;
-    //assignNumValue()
 });
 
 loBut.addEventListener("click", () => {
@@ -160,7 +159,6 @@ loBut.addEventListener("click", () => {
     hiBut.disabled = true;
     loBut.disabled = true;
     deckBut.disabled = false;
-    //assignNumValue()
 });
 
 
@@ -179,7 +177,7 @@ heading.addEventListener("click", () => {
 
 //}
 //home()
-assignNumValue()
+//assignNumValue()
 });
 
 /* * NOTES
