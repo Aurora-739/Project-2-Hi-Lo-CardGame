@@ -92,14 +92,17 @@ document.addEventListener("DOMContentLoaded", function () {
         if (cardNumList.length >= 2) {
             const prevCard = cardNumList[cardNumList.length - 2];
             const currentCard = cardNumList[cardNumList.length - 1];
+
             if (currentCard > prevCard) {
                 if (guessHi === true) {
                     correctCount++;
+                    console.log(correctCount)
                     correctSpan.textContent = correctCount;
                     guessHi = false;
                     console.log("Yay! That's correct!");
                 } else if (guessLo === true) {
                     correctCount--;
+                    console.log(correctCount)
                     correctSpan.textContent = correctCount;
                     guessLo = false;
                     console.log("Oh no! That's wrong!");
@@ -108,11 +111,13 @@ document.addEventListener("DOMContentLoaded", function () {
             if (currentCard < prevCard) {
                 if (guessHi === true) {
                     correctCount--;
+                    console.log(correctCount)
                     correctSpan.textContent = correctCount;
                     guessLo = false;
                     console.log("Oh no! That's wrong!");
                 } else if (guessLo === true) {
                     correctCount++;
+                    console.log(correctCount)
                     correctSpan.textContent = correctCount;
                     guessHi = false;
                     console.log("Yay! That's correct!");

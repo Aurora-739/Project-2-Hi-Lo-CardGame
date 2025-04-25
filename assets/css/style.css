@@ -89,10 +89,8 @@ button:hover {
     background-image: url("https://static.vecteezy.com/system/resources/thumbnails/008/854/548/small_2x/poker-card-casino-3d-design-elements-free-png.png");
     background-color: transparent;
     height: 35%;
-    /*width: 100%;*/
     padding: 191%;
-    /*padding: 59%;*/
-    transform: rotate(78deg); /*new*/
+    transform: rotate(78deg);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -106,7 +104,8 @@ button:hover {
 }
 
 #inPlay {
-    transform: rotate(90deg); /*new*/
+    transform: rotate(90deg);
+    /*new*/
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -207,6 +206,12 @@ button:hover {
         margin: 2rem;
     }
 
+    #card-img {
+        transform: rotate(-90deg);
+        height: 278px;
+        margin: 2rem;
+        padding-bottom: 3rem;
+    }
 
     #deck {
         justify-content: center;
