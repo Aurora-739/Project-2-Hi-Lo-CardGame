@@ -10,6 +10,7 @@ body {
     font-family: "Oregano", sans-serif;
     color: #d35158;
     width: 100vw;
+    margin: auto;
 }
 
 h1 {
@@ -48,6 +49,8 @@ button:hover {
     flex-wrap: nowrap;
     justify-content: center;
     font-size: 1.25rem;
+    margin: 1rem;
+    text-align: center;
 }
 
 #start {
@@ -75,10 +78,10 @@ button:hover {
 }
 
 #deck {
-    display: flex;
+    /*display: flex;
     flex-direction: column;
-    justify-content: start;
-    width: 25%;
+    justify-content: start;*/
+    width: 100%;
     height: 300px;
 }
 
@@ -86,14 +89,24 @@ button:hover {
     background-image: url("https://static.vecteezy.com/system/resources/thumbnails/008/854/548/small_2x/poker-card-casino-3d-design-elements-free-png.png");
     background-color: transparent;
     height: 35%;
-    width: 100%;
-    padding: 59%;
+    /*width: 100%;*/
+    padding: 191%;
+    /*padding: 59%;*/
+    transform: rotate(78deg); /*new*/
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
 }
 
+#card-img {
+    height: 194px;
+    margin-left: 170px;
+    margin-right: -78px;
+    margin-top: 97px;
+}
+
 #inPlay {
+    transform: rotate(90deg); /*new*/
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -156,6 +169,7 @@ button:hover {
     background-color: #fffbed;
     flex-basis: 75%;
     margin: 1rem;
+    padding: 1rem;
 }
 
 #winLose {
@@ -179,18 +193,25 @@ button:hover {
     /* MAKE TITLE BIGGER*/
     #title {
         font-size: 2rem;
-    }   
+    }
 
 
     /*THE PLAYING SURFACE ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
     #playingSurface {
+        display: flex;
+        flex-wrap: nowrap;
+        flex-direction: row;
+        justify-content: center;
+        padding-bottom: 4rem;
         margin: 2rem;
     }
 
+
     #deck {
         justify-content: center;
-        width: 50%; 
-        }
+        width: 50%;
+    }
 
     #blankDeck {
         margin-right: 2rem;
@@ -212,12 +233,13 @@ button:hover {
 
     #rulescountBox {
         flex-direction: row;
-        }
+    }
 
     #winLose {
         padding: 2rem;
         margin-right: 2rem;
     }
+
     #rules {
         margin-left: 2rem;
         padding-left: 2rem;
@@ -228,8 +250,8 @@ button:hover {
 /* -- LARGE DEVICES (tablets and up -- ≥1920px) */
 @media screen and (min-width: 1920px) {
     #deckButton {
-        width: 71%; 
-        }
+        width: 71%;
+    }
 
     #blankDeck {
         width: fit-content;
