@@ -78,9 +78,9 @@ button:hover {
 }
 
 #deck {
-    /*display: flex;
+    display: flex;
     flex-direction: column;
-    justify-content: start;*/
+    justify-content: start;
     width: 100%;
     height: 300px;
 }
@@ -252,10 +252,19 @@ button:hover {
     }
 }
 
-/* -- LARGE DEVICES (tablets and up -- ≥1920px) */
-@media screen and (min-width: 1920px) {
+/* -- LARGE DEVICES (tablets and up -- 1366 px) */
+@media screen and (min-width: 1366px) {
+    #title{
+        padding-bottom: 12rem;
+    }
+
+    #start {
+        height: 0rem;
+    }
+
     #deckButton {
         width: 71%;
+        transform: rotate(0deg);
     }
 
     #blankDeck {
@@ -265,6 +274,21 @@ button:hover {
 
     #playingSurface {
         margin-top: 0rem;
+    }
 
+    #playButtons {
+        width: 25%;
+    }
+
+    #card-img {
+        transform: rotate(-90deg);
+        height: 500px;
+        margin: 2rem;
+        /*padding-left: 20rem;
+        padding-top: 20rem;*/
+    }
+
+    #rulescountBox {
+        margin-top: 7rem;
     }
 }
