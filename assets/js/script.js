@@ -86,7 +86,6 @@ document.addEventListener("DOMContentLoaded", function () {
     //Set it up on the page on click.
     // ~~~~~ 5 Log card value & numerical values to list
     deckBut.addEventListener("click", () => {
-        thirteen(cardList, cardNumList, guessHi, guessLo, correctCount)
         endgame()
         let randomCard = pickingCard()
         let numValues = assignNumValue()
@@ -113,12 +112,14 @@ document.addEventListener("DOMContentLoaded", function () {
                     correctSpan.textContent = correctCount;
                     guessHi = false;
                     console.log("Yay! That's correct!");
+                    thirteen(cardList, cardNumList, correctCount);
                 } else if (guessLo === true) {
                     correctCount--;
                     console.log(correctCount)
                     correctSpan.textContent = correctCount;
                     guessLo = false;
                     console.log("Oh no! That's wrong!");
+                    thirteen(cardList, cardNumList, correctCount);
                 }
             }
             if (currentCard < prevCard) {
@@ -128,21 +129,25 @@ document.addEventListener("DOMContentLoaded", function () {
                     correctSpan.textContent = correctCount;
                     guessLo = false;
                     console.log("Oh no! That's wrong!");
+                    thirteen(cardList, cardNumList, correctCount);
                 } else if (guessLo === true) {
                     correctCount++;
                     console.log(correctCount)
                     correctSpan.textContent = correctCount;
                     guessHi = false;
                     console.log("Yay! That's correct!");
+                    thirteen(cardList, cardNumList, correctCount);
                 }
             }
             if (currentCard === prevCard) {
                 if (guessHi === true) {
                     guessHi = false;
                     console.log("Same value!");
+                    thirteen(cardList, cardNumList, correctCount);
                 } else if (guessLo === true) {
                     guessHi = false;
                     console.log("Same Value!");
+                    thirteen(cardList, cardNumList, correctCount);
                 }
             }
         }
