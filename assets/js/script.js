@@ -7,6 +7,8 @@ document.addEventListener("DOMContentLoaded", function () {
     const loBut = document.getElementById('loButton');
     const hiBut = document.getElementById('hiButton');
     const correctSpan = document.getElementById('correct');
+    const winSpan = document.getElementById('wins')
+    const lossSpan = document.getElementById('losses')
     const botBox = document.getElementById('rulescountBox');
 
     // ~~~~~ 0 On click show playing surface
@@ -23,6 +25,8 @@ document.addEventListener("DOMContentLoaded", function () {
     var guessHi = false;
     var guessLo = false;
     let correctCount = 0;
+    let winCount = 0;
+    let lossCount = 0;
 
     // ~~~~~ 1 Choose a card randomly from card_images
     const imageFileNames = [
@@ -162,18 +166,27 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     // when you hit 13, win a round 
-    function thirteen(cardList, cardNumList, guessHi, guessLo, correctCount) {
+    function thirteen(cardList, cardNumList, correctCount) {
         if (correctCount == 13) {
             alert("You have won a round! The game will reset for you!")
             cardList.length = 0;
             cardNumList.length = 0;
             correctSpan.textContent = 0;
+            correctCount = 0;
+            winCount++;
+            winSpan.textContent = winCount;
         }
     }
     // endgame
     function endgame() {
         if (cardNumList.length >= 52) {
-            alert("You have run out of cards! This ends the game! I hope you had fun! Press the title to play again!")
+            alert("You have run out of cards! This ends the game! I hope you had fun!")
+            cardList.length = 0;
+            cardNumList.length = 0;
+            correctSpan.textContent = 0;
+            correctCount = 0;
+            lossCount++;
+            lossSpan.textContent = lossCount;
         }
     }
 
