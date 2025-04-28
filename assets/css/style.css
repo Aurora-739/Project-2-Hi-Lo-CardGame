@@ -264,7 +264,7 @@ button:hover {
 /* -- LARGE DEVICES (tablets and up -- 1366 px) */
 @media screen and (min-width: 1366px) {
     #title {
-        padding-bottom: 12rem;
+        padding-bottom: 7rem;
     }
 
     #start {
@@ -298,6 +298,6 @@ button:hover {
     }
 
     #rulescountBox {
-        margin-top: 7rem;
+        margin-top: 3rem;
     }
 }
