@@ -75,13 +75,15 @@ document.addEventListener("DOMContentLoaded", function () {
             console.log(imagePath);
             return randomCard;
         }
-        
+
     }
 
     // ~~~~~ 2.1 If the card has not been used the card can be displayed (checked in 2)
     //Set it up on the page on click.
     // ~~~~~ 5 Log card value & numerical values to list
     deckBut.addEventListener("click", () => {
+        thirteen(cardList, cardNumList, guessHi, guessLo, correctCount)
+        endgame()
         let randomCard = pickingCard()
         let numValues = assignNumValue()
         card.src = imagePath;
@@ -100,7 +102,7 @@ document.addEventListener("DOMContentLoaded", function () {
             const prevCard = cardNumList[cardNumList.length - 2];
             const currentCard = cardNumList[cardNumList.length - 1];
 
-            if (currentCard > prevCard) {
+            if (currentCard > prevCard) { // ~~~~~ 4 Compare the card to the prev card in list & see if it matches the users hi/lo variable
                 if (guessHi === true) {
                     correctCount++;
                     console.log(correctCount)
@@ -142,9 +144,6 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 
-
-    // ~~~~~ 4 Compare the card to the prev card in list & see if it matches the users hi/lo variable
-
     // ~~~~~ 6 User picks HI / Lo
     hiBut.addEventListener("click", () => {
         console.log("hi button has been clicked")
@@ -162,9 +161,20 @@ document.addEventListener("DOMContentLoaded", function () {
         deckBut.disabled = false;
     });
 
+    // when you hit 13, win a round 
+    function thirteen(cardList, cardNumList, guessHi, guessLo, correctCount) {
+        if (correctCount == 13) {
+            alert("You have won a round! The game will reset for you!")
+            cardList.length = 0;
+            cardNumList.length = 0;
+            correctSpan.textContent = 0;
+        }
+    }
     // endgame
     function endgame() {
-
+        if (cardNumList.length >= 52) {
+            alert("You have run out of cards! This ends the game! I hope you had fun! Press the title to play again!")
+        }
     }
 
     // ~~~~~ 7 Log users Hi / Lo variable choice & loop back to 1
