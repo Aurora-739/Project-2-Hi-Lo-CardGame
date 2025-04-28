@@ -14,6 +14,8 @@ document.addEventListener("DOMContentLoaded", function () {
         playSurf.style.visibility = "visible";
         card.style.visibility = "visible";
         botBox.style.visibility = "visible";
+        hiBut.disabled = true
+        loBut.disabled = true
     });
     // all the lists & guesses (card value, card numberical value, hi & lo)
     const cardList = [];
@@ -64,13 +66,18 @@ document.addEventListener("DOMContentLoaded", function () {
         console.log(randomIndex);
         const randomCard = imageFileNames[randomIndex];
         console.log(randomCard);
-        //Create a filepath to the image.
-        imagePath = `assets/card_images/${randomCard}`;
-        console.log(imagePath);
-
-        checkCard(randomCard, cardList) // go to check card function (2)
-        return randomCard
+        if (cardList.includes(randomCard)) { // ~~~~~ 2 Check if the card value has been used before (this round)
+            console.log("card checked");
+            return pickingCard(); // got to picking card function (1) 
+        } else {
+            console.log("card is fine");
+            imagePath = `assets/card_images/${randomCard}`; //Create a filepath to the image.
+            console.log(imagePath);
+            return randomCard;
+        }
+        
     }
+
     // ~~~~~ 2.1 If the card has not been used the card can be displayed (checked in 2)
     //Set it up on the page on click.
     // ~~~~~ 5 Log card value & numerical values to list
@@ -107,7 +114,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     guessLo = false;
                     console.log("Oh no! That's wrong!");
                 }
-            } 
+            }
             if (currentCard < prevCard) {
                 if (guessHi === true) {
                     correctCount--;
@@ -123,7 +130,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     console.log("Yay! That's correct!");
                 }
             }
-            if (currentCard === prevCard){
+            if (currentCard === prevCard) {
                 if (guessHi === true) {
                     guessHi = false;
                     console.log("Same value!");
@@ -132,52 +139,41 @@ document.addEventListener("DOMContentLoaded", function () {
                     console.log("Same Value!");
                 }
             }
-    }
+        }
     });
 
-// ~~~~~ 2 Check if the card value has been used before (this round)
-function checkCard(randomCard, cardList) {
-    if (cardList.includes(randomCard)) {
-        pickingCard(); // got to picking card function (1)
+
+    // ~~~~~ 4 Compare the card to the prev card in list & see if it matches the users hi/lo variable
+
+    // ~~~~~ 6 User picks HI / Lo
+    hiBut.addEventListener("click", () => {
+        console.log("hi button has been clicked")
+        guessHi = true;
+        hiBut.disabled = true;
+        loBut.disabled = true;
+        deckBut.disabled = false;
+    });
+
+    loBut.addEventListener("click", () => {
+        console.log("lo button has been clicked")
+        guessLo = true;
+        hiBut.disabled = true;
+        loBut.disabled = true;
+        deckBut.disabled = false;
+    });
+
+    // endgame
+    function endgame() {
+
     }
-}
 
-// ~~~~~ 4 Compare the card to the prev card in list & see if it matches the users hi/lo variable
+    // ~~~~~ 7 Log users Hi / Lo variable choice & loop back to 1
 
-// ~~~~~ 6 User picks HI / Lo
-hiBut.addEventListener("click", () => {
-    console.log("hi button has been clicked")
-    guessHi = true;
-    hiBut.disabled = true;
-    loBut.disabled = true;
-    deckBut.disabled = false;
-});
+    // ~~~~~ 8 If heading is clicked on send back to main screen.
+    heading.addEventListener("click", () => {
+        window.location.href = "http://127.0.0.1:8000/";
+    });
 
-loBut.addEventListener("click", () => {
-    console.log("lo button has been clicked")
-    guessLo = true;
-    hiBut.disabled = true;
-    loBut.disabled = true;
-    deckBut.disabled = false;
-});
-
-
-
-// ~~~~~ 7 Log users Hi / Lo variable choice & loop back to 1
-
-// ~~~~~ 8 If heading is clicked on send back to main screen.
-heading.addEventListener("click", () => {
-    window.location.href = "http://127.0.0.1:8000/";
-});
-
-// ~~~~~ 9 Call functions
-//function home() {
-//    assignNumValue()
-//    pickingCard()
-
-//}
-//home()
-//assignNumValue()
 });
 
 /* * NOTES
