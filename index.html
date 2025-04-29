@@ -8,10 +8,12 @@
     <title>Hi-Lo Cards</title>
 </head>
 <body>
+    <!-- TITLE SECTION -->
     <div id="title">
         <h1>Hi-Lo ~ Card Game</h1>
     </div>
 
+    <!-- START PAGE IMAGES & BUTTON -->
     <div id="start" onclick="this.style.display='none'">
         <button id="startButton">Start Game!</button>
         <div id="myAces">
@@ -20,12 +22,11 @@
             <img src="assets/card_images/ace-h.JPG" alt="Ace of Hearts" height="200">
             <img src="assets/card_images/ace-sp.JPG" alt="Ace of spades" height="200">
         </div>
-        
-        
-        
     </div>
+
     <br>
     
+    <!-- THE PLAYING SURFACE (i.e. the deck, cards & hi / lo buttons) -->
     <div id="playingSurface" style="visibility: hidden">
         <div id="deck">
             <button id="deckButton"></button>
@@ -36,24 +37,20 @@
              
         </div>
 
-        <!-- playing buttons (hi / lo)-->
+        <!-- PLAY BUTTONS (hi / lo)-->
         <div id="playButtons">
-            <!--<div id="high">-->
                 <button id="hiButton">
                     <i class="fa-solid fa-arrow-up"></i>
 
                     Hi
                 </button>
-            <!--</div>-->
-            <!--<br>-->
-            <!--<div id="low">-->
                 <button id="loButton">
                     Lo
                     <i class="fa-solid fa-arrow-down"></i></button>
-            <!--</div>-->
         </div>
     </div>
     
+    <!-- BOTTOM SECTION (RULES & COUNTER) -->
     <div id="rulescountBox" style="visibility: hidden">
         <div id="rules" >
             <h3><i class="fa-solid fa-book-open"></i> How to play ~ </h3>
