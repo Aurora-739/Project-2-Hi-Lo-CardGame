@@ -48,7 +48,7 @@ document.addEventListener("DOMContentLoaded", function () {
     // Function to hold the assigned numerical value for each card.
     // ~~~~~ 3 Find the card's numerical value.
     function assignNumValue() {
-        ['ace-cl.JPG', 'ace-d.JPG', 'ace-h.JPG', 'ace-Spades.JPG'].forEach(item => numValues[item] = 1);
+        ['ace-cl.JPG', 'ace-d.JPG', 'ace-h.JPG', 'ace-sp.JPG'].forEach(item => numValues[item] = 1);
         ['2-cl.JPG', '2-d.JPG', '2-h.JPG', '2-sp.JPG'].forEach(item => numValues[item] = 2);
         ['3-cl.JPG', '3-d.JPG', '3-h.JPG', '3-sp.JPG'].forEach(item => numValues[item] = 3);
         ['4-cl.JPG', '4-d.JPG', '4-h.JPG', '4-sp.JPG'].forEach(item => numValues[item] = 4);
