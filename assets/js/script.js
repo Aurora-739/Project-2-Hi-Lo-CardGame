@@ -207,7 +207,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // ~~~~~ If heading is clicked on send back to main screen.
     heading.addEventListener("click", () => {
-        window.location.href = "http://127.0.0.1:8000/";
+        window.location.href = "https://aurora-739.github.io/Project-2-Hi-Lo-CardGame/";
     });
 
 });
