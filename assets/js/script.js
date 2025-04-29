@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const lossSpan = document.getElementById('losses')
     const botBox = document.getElementById('rulescountBox');
 
-    // ~~~~~ 0 On click show playing surface
+    // ~~~~~ On click show playing surface
     strtBut.addEventListener("click", () => {
         playSurf.style.visibility = "visible";
         card.style.visibility = "visible";
@@ -19,16 +19,20 @@ document.addEventListener("DOMContentLoaded", function () {
         hiBut.disabled = true
         loBut.disabled = true
     });
-    // all the lists & guesses (card value, card numberical value, hi & lo)
+    // All the lists & guesses (card value, card numberical value, hi & lo)
     const cardList = [];
     const cardNumList = [];
+    const numValues = []; // list to hold the assigned numerical value for each card.
     var guessHi = false;
     var guessLo = false;
     let correctCount = 0;
     let winCount = 0;
     let lossCount = 0;
 
-    // ~~~~~ 1 Choose a card randomly from card_images
+    /** 
+     * 3
+     * list of card names from the pickingCard() function
+     */
     const imageFileNames = [
         'ace-cl.JPG', 'ace-d.JPG', 'ace-h.JPG', 'ace-sp.JPG',
         '2-cl.JPG', '2-d.JPG', '2-h.JPG', '2-sp.JPG',
@@ -44,9 +48,11 @@ document.addEventListener("DOMContentLoaded", function () {
         'Queen-cl.JPG', 'Queen-d.JPG', 'Queen-h.JPG', 'Queen-sp.JPG',
         'King-cl.JPG', 'King-d.JPG', 'King-h.JPG', 'King-sp.JPG',
     ];
-    const numValues = [];
-    // Function to hold the assigned numerical value for each card.
-    // ~~~~~ 3 Find the card's numerical value.
+    
+    /**
+     * 4
+     * Find the card's numerical value.
+     */
     function assignNumValue() {
         ['ace-cl.JPG', 'ace-d.JPG', 'ace-h.JPG', 'ace-sp.JPG'].forEach(item => numValues[item] = 1);
         ['2-cl.JPG', '2-d.JPG', '2-h.JPG', '2-sp.JPG'].forEach(item => numValues[item] = 2);
@@ -63,28 +69,32 @@ document.addEventListener("DOMContentLoaded", function () {
         ['King-cl.JPG', 'King-d.JPG', 'King-h.JPG', 'King-sp.JPG'].forEach(item => numValues[item] = 13);
         return numValues
     }
+
+    /**
+     * 2 
+     * Choose a card randomly from card_images 
+     */
     function pickingCard() {
-        /**Choose a card randomly from card_images */
-        //pick a random one.
-        const randomIndex = Math.floor(Math.random() * imageFileNames.length);
+        const randomIndex = Math.floor(Math.random() * imageFileNames.length); //pick a random number.
         console.log(randomIndex);
-        const randomCard = imageFileNames[randomIndex];
+        const randomCard = imageFileNames[randomIndex]; // Use random number to chose a card from the imageFileNames list
         console.log(randomCard);
-        if (cardList.includes(randomCard)) { // ~~~~~ 2 Check if the card value has been used before (this round)
+        if (cardList.includes(randomCard)) { // Check if the card value has been used before (this round)
             console.log("card checked");
-            return pickingCard(); // got to picking card function (1) 
+            return pickingCard(); // Go to picking card function (1) 
         } else {
             console.log("card is fine");
             imagePath = `assets/card_images/${randomCard}`; //Create a filepath to the image.
             console.log(imagePath);
             return randomCard;
         }
-
     }
 
-    // ~~~~~ 2.1 If the card has not been used the card can be displayed (checked in 2)
-    //Set it up on the page on click.
-    // ~~~~~ 5 Log card value & numerical values to list
+    /**
+     * 1
+     * If the card has not been used the card can be displayed (checked in 2)
+     * 5 Log card value & numerical values to list
+     */
     deckBut.addEventListener("click", () => {
         endgame()
         let randomCard = pickingCard()
@@ -100,12 +110,12 @@ document.addEventListener("DOMContentLoaded", function () {
         hiBut.disabled = false;
         loBut.disabled = false;
 
-        // if the number of cards in the list is more than or equal to 2, checks to see if player has won
+        // 6 if the number of cards in the list is more than or equal to 2, checks to see if player has won
         if (cardNumList.length >= 2) {
             const prevCard = cardNumList[cardNumList.length - 2];
             const currentCard = cardNumList[cardNumList.length - 1];
 
-            if (currentCard > prevCard) { // ~~~~~ 4 Compare the card to the prev card in list & see if it matches the users hi/lo variable
+            if (currentCard > prevCard) { // Compare the card to the prev card in list & see if it matches the users hi/lo variable
                 if (guessHi === true) {
                     correctCount++;
                     console.log(correctCount)
@@ -153,7 +163,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 
-    // ~~~~~ 6 User picks HI / Lo
+    // ~~~~~ 7 User picks HI / Lo (user then clicks the deck button again & it restarts teh "loop"(not an actual loop just a term here))
     hiBut.addEventListener("click", () => {
         console.log("hi button has been clicked")
         guessHi = true;
@@ -170,7 +180,7 @@ document.addEventListener("DOMContentLoaded", function () {
         deckBut.disabled = false;
     });
 
-    // when you hit 13, win a round 
+    /**when you hit 13, win a round  */ 
     function thirteen(cardList, cardNumList, correctCount) {
         if (correctCount == 13) {
             alert("You have won a round! The game will reset for you!")
@@ -195,14 +205,9 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
-    // ~~~~~ 7 Log users Hi / Lo variable choice & loop back to 1
-
-    // ~~~~~ 8 If heading is clicked on send back to main screen.
+    // ~~~~~ If heading is clicked on send back to main screen.
     heading.addEventListener("click", () => {
         window.location.href = "http://127.0.0.1:8000/";
     });
 
 });
-
-/* * NOTES
-*/
