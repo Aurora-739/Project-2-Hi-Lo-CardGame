@@ -67,7 +67,8 @@ Image of the website _after_ the start button (and deck button) are clicked.
 
 Best practices is lower due to the images being sized incorrectly, however I found that the images being this size was appropriate for the game.
 Again, the aspect ratios are off slightly, this is again due to the size I wanted my images to be on the smaller screens, therefore I do not believe this to be detrimental to the site. 
-![image](https://github.com/user-attachments/assets/00c0bf59-0683-44aa-a837-9e5c2a9c00ab)
+![image](https://github.com/user-attachments/assets/60737bee-41dc-4f5a-a517-9ae463031bdf)
+
 
 ------
 
@@ -89,8 +90,11 @@ Again, the aspect ratios are off slightly, this is again due to the size I wante
 
 - CSS
   - No errors were returned when passing through the official ([Jigsaw](https://jigsaw.w3.org/css-validator/#validate_by_input)) validator.
+
 - JavaScript
   - No warnings were returned when passing through the official ([jshint](https://jshint.com/)) validator.
+ 
+  
 ------
 
 ## Deployment
