@@ -1,3 +1,4 @@
+/* jshint esversion: 6 */
 document.addEventListener("DOMContentLoaded", function () {
     const deckBut = document.getElementById('deckButton');
     const playSurf = document.getElementById('playingSurface');
@@ -7,8 +8,8 @@ document.addEventListener("DOMContentLoaded", function () {
     const loBut = document.getElementById('loButton');
     const hiBut = document.getElementById('hiButton');
     const correctSpan = document.getElementById('correct');
-    const winSpan = document.getElementById('wins')
-    const lossSpan = document.getElementById('losses')
+    const winSpan = document.getElementById('wins');
+    const lossSpan = document.getElementById('losses');
     const botBox = document.getElementById('rulescountBox');
 
     // ~~~~~ On click show playing surface
@@ -16,8 +17,8 @@ document.addEventListener("DOMContentLoaded", function () {
         playSurf.style.visibility = "visible";
         card.style.visibility = "visible";
         botBox.style.visibility = "visible";
-        hiBut.disabled = true
-        loBut.disabled = true
+        hiBut.disabled = true;
+        loBut.disabled = true;
     });
     // All the lists & guesses (card value, card numberical value, hi & lo)
     const cardList = [];
@@ -48,7 +49,7 @@ document.addEventListener("DOMContentLoaded", function () {
         'Queen-cl.JPG', 'Queen-d.JPG', 'Queen-h.JPG', 'Queen-sp.JPG',
         'King-cl.JPG', 'King-d.JPG', 'King-h.JPG', 'King-sp.JPG',
     ];
-    
+
     /**
      * 4
      * Find the card's numerical value.
@@ -67,7 +68,7 @@ document.addEventListener("DOMContentLoaded", function () {
         ['Jack-cl.JPG', 'Jack-d.JPG', 'Jack-h.JPG', 'Jack-sp.JPG'].forEach(item => numValues[item] = 11);
         ['Queen-cl.JPG', 'Queen-d.JPG', 'Queen-h.JPG', 'Queen-sp.JPG'].forEach(item => numValues[item] = 12);
         ['King-cl.JPG', 'King-d.JPG', 'King-h.JPG', 'King-sp.JPG'].forEach(item => numValues[item] = 13);
-        return numValues
+        return numValues;
     }
 
     /**
@@ -84,7 +85,7 @@ document.addEventListener("DOMContentLoaded", function () {
             return pickingCard(); // Go to picking card function (1) 
         } else {
             console.log("card is fine");
-            imagePath = `assets/card_images/${randomCard}`; //Create a filepath to the image.
+            var imagePath = `assets/card_images/${randomCard}`; //Create a filepath to the image.
             console.log(imagePath);
             return randomCard;
         }
@@ -95,10 +96,10 @@ document.addEventListener("DOMContentLoaded", function () {
      * If the card has not been used the card can be displayed (checked in 2)
      * 5 Log card value & numerical values to list
      */
-    deckBut.addEventListener("click", () => {
-        endgame()
-        let randomCard = pickingCard()
-        let numValues = assignNumValue()
+    deckBut.addEventListener("click", (imagePath) => {
+        endgame();
+        let randomCard = pickingCard();
+        let numValues = assignNumValue();
         card.src = imagePath;
         console.log(card.src);
         card.alt = randomCard;
@@ -118,14 +119,14 @@ document.addEventListener("DOMContentLoaded", function () {
             if (currentCard > prevCard) { // Compare the card to the prev card in list & see if it matches the users hi/lo variable
                 if (guessHi === true) {
                     correctCount++;
-                    console.log(correctCount)
+                    console.log(correctCount);
                     correctSpan.textContent = correctCount;
                     guessHi = false;
                     console.log("Yay! That's correct!");
                     thirteen(cardList, cardNumList, correctCount);
                 } else if (guessLo === true) {
                     correctCount--;
-                    console.log(correctCount)
+                    console.log(correctCount);
                     correctSpan.textContent = correctCount;
                     guessLo = false;
                     console.log("Oh no! That's wrong!");
@@ -135,14 +136,14 @@ document.addEventListener("DOMContentLoaded", function () {
             if (currentCard < prevCard) {
                 if (guessHi === true) {
                     correctCount--;
-                    console.log(correctCount)
+                    console.log(correctCount);
                     correctSpan.textContent = correctCount;
                     guessLo = false;
                     console.log("Oh no! That's wrong!");
                     thirteen(cardList, cardNumList, correctCount);
                 } else if (guessLo === true) {
                     correctCount++;
-                    console.log(correctCount)
+                    console.log(correctCount);
                     correctSpan.textContent = correctCount;
                     guessHi = false;
                     console.log("Yay! That's correct!");
@@ -165,7 +166,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // ~~~~~ 7 User picks HI / Lo (user then clicks the deck button again & it restarts teh "loop"(not an actual loop just a term here))
     hiBut.addEventListener("click", () => {
-        console.log("hi button has been clicked")
+        console.log("hi button has been clicked");
         guessHi = true;
         hiBut.disabled = true;
         loBut.disabled = true;
@@ -173,17 +174,17 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     loBut.addEventListener("click", () => {
-        console.log("lo button has been clicked")
+        console.log("lo button has been clicked");
         guessLo = true;
         hiBut.disabled = true;
         loBut.disabled = true;
         deckBut.disabled = false;
     });
 
-    /**when you hit 13, win a round  */ 
+    /**when you hit 13, win a round  */
     function thirteen(cardList, cardNumList, correctCount) {
         if (correctCount == 13) {
-            alert("You have won a round! The game will reset for you!")
+            alert("You have won a round! The game will reset for you!");
             cardList.length = 0;
             cardNumList.length = 0;
             correctSpan.textContent = 0;
@@ -195,7 +196,7 @@ document.addEventListener("DOMContentLoaded", function () {
     // endgame
     function endgame() {
         if (cardNumList.length >= 52) {
-            alert("You have run out of cards! This ends the game! I hope you had fun!")
+            alert("You have run out of cards! This ends the game! I hope you had fun!");
             cardList.length = 0;
             cardNumList.length = 0;
             correctSpan.textContent = 0;
@@ -205,7 +206,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
-    // ~~~~~ If heading is clicked on send back to main screen.
+    // ~~~~~ If heading/title is clicked on send back to main screen.
     heading.addEventListener("click", () => {
         window.location.href = "https://aurora-739.github.io/Project-2-Hi-Lo-CardGame/";
     });
