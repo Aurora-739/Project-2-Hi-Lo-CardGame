@@ -24,16 +24,16 @@ Image of the website _after_ the start button (and deck button) are clicked.
 
 - **The Deck**
   - Situated on the left of the screen and varying in size depending on screen size, the deck functions as a deck would in a regular game. It deals the cards when clicked on.
-  - Instructions on how to use the deck can be found in the instructions box at the bottom of the screen.
+  - Instructions for using the deck can be found in the instructions box at the bottom of the screen.
   - This button is functional and interactive once per round. After it is clicked it cannot be clicked again until the hi or lo button has been clicked.
 
 (image later in the "Play Area" section)
 
 - **Hi / Lo Buttons**
-  - These buttons can be seen on the right of the screen on all screen sizes. They contrast with the background (dark green) by their light cream colour.
+  - These buttons can be seen on the right of the medium to larger screen sizes, on smaller screen sizes they are are underneath the deck and cards as to not take up too much space. They contrast with the background (dark green) by their light cream colour.
   - The function of these buttons is that when the user clicks either one they are guessing whether the next card drawn will be higher or lower than the current card, once clicked the score at the bottom will go up / down depending on if the user is correct or not.
-  - This is explained in the How to Play box.
-  - If the user is incorrect an alert box will pop up at the top of the screen to tell the user they got one wrong and the correct count at the bottom right of the screen will go down (it can pass 0).
+  - This is explained in the "How to Play" box.
+  - If the user is incorrect the correct count at the bottom right of the screen will go down (it can go below 0).
 
 ![image](https://github.com/user-attachments/assets/33f784d5-9dc5-42a2-a30b-885d476a7541)
 
