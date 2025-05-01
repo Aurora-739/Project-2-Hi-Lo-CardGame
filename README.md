@@ -44,13 +44,13 @@ Image of the website _after_ the start button (and deck button) are clicked.
 
 - **How to Play**
   - Is a box at the bottom of the screen, it contrasts the background by being a cream box so that users can easily see it.
-  - The box is at the bottom left and functions as a list of rules for the users to read so that they can easily grasp the game.
+  - The box is at the bottom left and functions as a list of rules for the users to read, helping them grasp the game easily.
  
   ![image](https://github.com/user-attachments/assets/b8f47a23-3823-4970-b5e7-44be83d8d8ea)
 
 - **Score Box**
-  - The score box is next to / below the How to Play box (depending on screen size) and has three sets of scores: Correct, Wins & Losses.
-  - The scores increment depending on the users response i.e. the correct score goes up if the user gets on correct and down is the user gets one wrong, the wins score goes up when the user gets 13 correct and the losses score goes up every time the user gets one wrong.
+  - The score box is next to / below the "How to Play" box (depending on screen size) and has three sets of scores: Correct, Wins & Losses.
+  - The scores increment depending on the users response i.e. the correct score goes up if the user gets on correct and down is the user gets one wrong, the wins score goes up when the user gets 13 correct and the losses score goes up every time the user runs out of cards (& so loses the game).
   - Is a box at the bottom of the screen, it contrasts the background by being a cream box so that users can easily see it.
 ![image](https://github.com/user-attachments/assets/525c8c30-8df4-4699-869a-f19715d1a558)
 
