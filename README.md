@@ -63,8 +63,9 @@ Image of the website _after_ the start button (and deck button) are clicked.
 - I confirm that the colours and fonts used are easy to read and are accessible by running it through lighthouse devtools.
 - I confirm that the project is responsive, looks good and functions on all standard screen sizes using the devtools device bar.
 
-![image](https://github.com/user-attachments/assets/2b800606-58f7-4f67-b4b6-d9e8184796cd)
-Best practices is so low due to the use of an external image, however I found that this was necessary for my choice of button.
+![image](https://github.com/user-attachments/assets/0e3d4b09-4166-4168-b9bf-6bc8e2966daa)
+
+Best practices is lower due to the images being sized incorrectly, however I found that the images being this size was appropriate for the game.
 Again, the aspect ratios are off slightly, this is again due to the size I wanted my images to be on the smaller screens, therefore I do not believe this to be detrimental to the site. 
 ![image](https://github.com/user-attachments/assets/00c0bf59-0683-44aa-a837-9e5c2a9c00ab)
 
