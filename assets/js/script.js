@@ -96,7 +96,7 @@ document.addEventListener("DOMContentLoaded", function () {
      * If the card has not been used the card can be displayed (checked in 2)
      * 5 Log card value & numerical values to list
      */
-    deckBut.addEventListener("click", (imagePath) => {
+    deckBut.addEventListener("click", () => {
         endgame();
         let randomCard = pickingCard();
         let numValues = assignNumValue();
