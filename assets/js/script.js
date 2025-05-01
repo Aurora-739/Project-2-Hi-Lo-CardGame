@@ -79,16 +79,12 @@ document.addEventListener("DOMContentLoaded", function () {
      */
     function pickingCard() {
         const randomIndex = Math.floor(Math.random() * imageFileNames.length); //pick a random number.
-        console.log(randomIndex);
         const randomCard = imageFileNames[randomIndex]; // Use random number to chose a card from the imageFileNames list
         console.log(randomCard);
         if (cardList.includes(randomCard)) { // Check if the card value has been used before (this round)
-            console.log("card checked");
             return pickingCard(); // Go to picking card function (1) 
         } else {
-            console.log("card is fine");
             imagePath = `assets/card_images/${randomCard}`; //Create a filepath to the image.
-            console.log(imagePath);
             return randomCard;
         }
     }
@@ -103,7 +99,6 @@ document.addEventListener("DOMContentLoaded", function () {
         let randomCard = pickingCard();
         let numValues = assignNumValue();
         card.src = imagePath;
-        console.log(card.src);
         card.alt = randomCard;
         cardList.push(randomCard);
         cardNumList.push(numValues[randomCard]);
@@ -168,7 +163,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // ~~~~~ 7 User picks HI / Lo (user then clicks the deck button again & it restarts teh "loop"(not an actual loop just a term here))
     hiBut.addEventListener("click", () => {
-        console.log("hi button has been clicked");
+        console.log("hi");
         guessHi = true;
         hiBut.disabled = true;
         loBut.disabled = true;
@@ -176,7 +171,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     loBut.addEventListener("click", () => {
-        console.log("lo button has been clicked");
+        console.log("lo");
         guessLo = true;
         hiBut.disabled = true;
         loBut.disabled = true;
