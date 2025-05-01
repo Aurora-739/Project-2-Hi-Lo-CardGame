@@ -74,17 +74,14 @@ Again, the aspect ratios are off slightly, this is again due to the size I wante
 ### Bugs
 
 **Solved Bugs**
-- A bug I solved was that when deployed the image I had used in JavaScript to create an image (a card) in the play area had not worked as I'd hoped. 
-- I spent a while researching and looking back at the notes provided by the Code institute as well as external sources (such as Bro Code (a youtube channel) as well as W3Schools and a few stack overflow threads) until I discovered that to do what I wanted I needed to have an image already there and instead to replace it. I did this by having a green image that matches the background of the page and replacing that with a card when the deck is clicked.
-  
-- Another bug I solved was that when I deployed my project I discovered that the image of the deck was not present.
-- After playing around with different images and looking up CSS images I found that the fix that worked more efficiently and frequently was having a link to an external image on the deck button instead of trying to get one from my assets. Although this causes the best practices section on lighthouse have a lower score, ultimately I believe that this was the best option I could come up with at this time.
+- When I deployed my project to GitHub i dicovered that some of my images would not load.
+- I discovered that this was due to them not being updated correctly in the assets folder after I had updated them in the code. The simple fix was to rename each of the seven incorrect card image files to the new and correct name.
 
-- Another bug I solved was that the when the card had already been played it would deal a new card, however this card was not equal value to the other card and so would be incorrect.
-- This was solved by instead of jumping back to the dealing() function, jumping only back to the function where the second number (the value of the suit) was dealt and continuing from there. 
+- Another bug was that the the correct & hi/lo buttons were not connected correctly. This led to there being issues where the correctCount wpuldn't increment like it was supposed to.
+- I fixed this by going through all of the if's and else's in the correlating section until I found that there was an indentation error where the if's and else's were not in the correct indentations leading the code to skip over sections.
 
 ### Unfixed Bugs
-- An unfixed bug is that occasionally when the deck is clicked on two images flash up one after the other. They are of equal value (e.g. both queens), I believe this is due to the jumping back to the suits however I am unsure. This bug does not severely alter gamplay and is usually completely unoticeable.
+- No unfixed Bugs
 
 ### Validator Testing
 - HTML
