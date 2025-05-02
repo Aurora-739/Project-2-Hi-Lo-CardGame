@@ -2,7 +2,7 @@
 
 The Hi-Lo Card Game is a digital card game of chance. It is designed as a fun pastime for those who enjoy games such as solitaire but don't have enough room (e.g., on public transit) or those who want to be able to access a card game at all times (when having internet access) and from any device. The cards are dealt and "shuffled" more randomly and simply than a regular deck and so create a more random and therefore "fair" game of probability.
 
-Users of this game will learn the rules from the rules box in the bottom left and can play for as long as they want. This game can be used as a way to pass time or to simply enjoy. The site is targeted towards adults and teens primarily, as the game concept could potentially be less interesting for a younger audience.
+Users of this game will learn the rules from the rules box in the bottom left and can play for as long as they want. This game can be used as a way to pass time or to simply enjoy. The site is targeted towards adults and teens primarily, as the game concept could potentially be less interesting for a younger audience. The game is not designed to be "completed" or "won", it is instead designed to increment scores and let the user increase their score each "round" of the game. Getting 13/13 cards correct instead is counted as "completing" or "winning".
 
 ![image](https://github.com/user-attachments/assets/b5730e77-0073-4541-a384-6a445745e650)
 Image of the website _before_ the start button is clicked.
